@@ -1,0 +1,252 @@
+---
+---
+
+@import "reset";
+
+$default-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+$default-monospace: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+
+body {
+	font-family: $default-sans;
+	line-height: 1.5;
+	//display: flex;
+	//flex-direction: column;
+	//min-height: 100vh;
+}
+
+.markdown-body .anchor:focus {
+	outline: none;
+}
+
+.markdown-body h1 .anchor,
+.markdown-body h2 .anchor,
+.markdown-body h3 .anchor,
+.markdown-body h4 .anchor,
+.markdown-body h5 .anchor,
+.markdown-body h6 .anchor {
+	visibility: hidden;
+	@media screen and (hover: none) {
+		visibility: visible;
+	}
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+	visibility: visible;
+}
+
+.markdown-body .footnotes {
+	font-size: 80%;
+	border-top: 1px solid lightgray;
+}
+
+a {
+	color: #0366d6;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #0366d6;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+// Container
+
+.container {
+	max-width: 800px - (30px * 2);
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0px 30px;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+// Header
+
+.site-header {
+	border-top: 5px solid #424242;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.header-flex {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.site-title {
+	vertical-align: middle;
+}
+
+.site-name {
+	font-size: 32px;
+	font-weight: 300;
+	font-variant: small-caps;
+}
+
+.site-description {
+	font-size: 24px;
+	font-weight: 300;
+	margin-bottom: 5px;
+	color: Gray;
+}
+
+.site-nav {
+	margin-left: auto;
+	align-self: center;
+	vertical-align: middle;
+}
+
+@media screen and (max-width: 450px) {
+	.site-title {
+		text-align: center;
+	}
+	.site-nav {
+		text-align: center;
+		margin: 0px;
+	}
+	.header-flex {
+		 flex-direction: column;
+	}
+}
+
+// Index
+
+.post-index li {
+	margin-top: 30px;
+}
+
+.post-index h2 {
+	font-size: 24px;
+	//font-weight: 300;
+}
+
+.posts {
+	font-size: 24px;
+	//font-weight: 300;
+	margin-bottom: 30px;
+}
+
+.post-index time {
+	line-height: 1.0;
+	display: block;
+	font-size: 12px;
+	color: #828282;
+}
+
+.post-index .meta {
+	display: block;
+	font-size: 12px;
+	color: #828282;
+}
+
+// Page
+
+.page-content {
+	padding: 30px 0;
+	//flex: 1;
+}
+
+// Footer
+
+.site-footer {
+	border-color: LightGray;
+	border-style: solid;
+	border-width: 1px 0px;
+	background-color: #eee;
+	padding: 15px 0;
+}
+
+.footer-content {
+	text-align: center;
+	font-size: 16px;
+	color: #828282;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+}
+
+.footer-content .roundbox {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	margin: 4px;
+	background-color: White;
+	border: 1px solid White;
+	border-radius: 25%;
+	fill: #444;
+	text-align: center;
+	vertical-align: middle;
+}
+
+//.footer-content .roundbox:hover {
+//	border: 1px solid Gray;
+//}
+
+.footer-content .roundbox svg {
+	width: 24px;
+	height: 24px;
+	margin: 8px;
+}
+
+// Ultra cool icon hover coloring
+
+.roundbox svg#envelope { fill: inherit; }
+.roundbox:hover svg#envelope { fill: #000000; }
+
+.roundbox svg#github { fill: inherit; }
+.roundbox:hover svg#github { fill: #000000; }
+
+.roundbox svg#gitlab #tanuki-nose { fill: inherit; }
+.roundbox svg#gitlab #tanuki-left-eye { fill: white; }
+.roundbox svg#gitlab #tanuki-left-cheek { fill: inherit; }
+.roundbox svg#gitlab #tanuki-left-ear { fill: inherit; }
+.roundbox svg#gitlab #tanuki-right-eye { fill: white; }
+.roundbox svg#gitlab #tanuki-right-cheek { fill: inherit; }
+.roundbox svg#gitlab #tanuki-right-ear { fill: inherit; }
+.roundbox:hover svg#gitlab #tanuki-nose { fill: #e24329; }
+.roundbox:hover svg#gitlab #tanuki-left-eye { fill: #fc6d26; }
+.roundbox:hover svg#gitlab #tanuki-left-cheek { fill: #fca326; }
+.roundbox:hover svg#gitlab #tanuki-left-ear { fill: #e24329; }
+.roundbox:hover svg#gitlab #tanuki-right-eye { fill: #fc6d26; }
+.roundbox:hover svg#gitlab #tanuki-right-cheek { fill: #fca326; }
+.roundbox:hover svg#gitlab #tanuki-right-ear { fill: #e24329; }
+
+.roundbox svg#linkedin { fill: inherit; }
+.roundbox:hover svg#linkedin { fill: #0077b5; }
+
+.roundbox svg#stack-overflow #stack { fill: inherit; }
+.roundbox svg#stack-overflow #overflow { fill: inherit; }
+.roundbox:hover svg#stack-overflow #stack { fill: #bcbbbb; }
+.roundbox:hover svg#stack-overflow #overflow { fill: #f48023; }
+
+.roundbox svg#atom { fill: inherit; }
+.roundbox:hover svg#atom { fill: #ff7f00; }
+
+// Post
+
+.post-meta {
+	display: block;
+	margin-top: -10px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #828282;
+}
+
+@media screen and (min-width: 800px) {
+	.post-meta > div {
+		float: right;
+	}
+}
