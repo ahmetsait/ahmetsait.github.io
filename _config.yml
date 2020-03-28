@@ -1,0 +1,108 @@
+# Main variables
+name: "Veni Vidi Codi"
+tagline: "Ahmet Sait's Developer Blog"
+description: "Ahmet Sait's Developer Blog"
+url: "https://ahmetsait.github.io"
+author: "Ahmet Sait"
+lang: en-US
+
+links:
+  email: '&#x61;&#x68;&#x6d;&#x65;&#x74;&#x73;&#x61;&#x69;&#x74;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;'
+  github: ahmetsait
+  gitlab: ahmetsait
+  linkedin: ahmet-sait
+  stackoverflow: users/3624513/ahmet-sait
+  atom: feed # just type anything here for a working RSS icon
+
+# Atom Feed Config
+feed:
+  path: venividicodi.atom
+
+# Where things are
+source: .
+destination: ./_site
+plugins_dir: _plugins
+layouts_dir: _layouts
+data_dir: _data
+includes_dir: _includes
+sass:
+  sass_dir: _sass
+
+# Handling Reading
+safe: false
+include:
+  - .htaccess
+exclude:
+  - LICENSE
+  - README.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+strict_front_matter: false
+
+# Filtering Content
+show_drafts: null
+limit_posts: 0
+future: false
+unpublished: false
+
+# Plugins
+whitelist: []
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Serving
+#detach: false
+#port: 4000
+#host: 127.0.0.1
+baseurl: "" # the subpath of your site, e.g. /blog
+show_dir_listing: false
+
+# Outputting
+permalink: date
+paginate_path: /page-:num
+timezone: null
+
+quiet: false
+verbose: false
+defaults: []
+
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
+
+# Markdown Processors
+rdiscount:
+  extensions: []
+
+redcarpet:
+  extensions: []
+
+kramdown:
+  auto_ids: true
+  entity_output: as_char
+  toc_levels: [1, 2, 3, 4, 5, 6]
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  input: GFM
+  hard_wrap: false
+  footnote_nr: 1
+  show_warnings: false
