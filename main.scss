@@ -9,6 +9,8 @@ $default-monospace: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospac
 body {
 	font-family: $default-sans;
 	line-height: 1.5;
+	-moz-tab-size: 4;
+	tab-size: 4;
 	//display: flex;
 	//flex-direction: column;
 	//min-height: 100vh;
@@ -250,3 +252,6 @@ a:hover {
 		float: right;
 	}
 }
+
+@import "github-markdown";
+@import "syntax-monokai-sublime";
