@@ -7,10 +7,10 @@ layout: default
 	
 	<div class="post-meta">
 		<time datetime="{{ page.date | date: "%Y-%m-%d %H:%M %z" }}" title="{{ page.date | date: "%Y-%m-%d %H:%M %z" }}">
-			{{ page.date | date: "%B %e, %Y" }}
+			<i class="far fa-clock"></i> {{ page.date | date: "%B %e, %Y" }}
 		</time>
 		
-		<div>{% if page.categories.size > 0 %}{% if page.categories.size == 1 %}Category{% else %}Categories{% endif %}: {{ page.categories | join: ", " }}{% if page.categories.size > 0 and page.tags.size > 0 %} • {% endif %}{% endif %}{% if page.tags.size > 0 %}Topics: {{ page.tags | join: ", " }} {% endif %}</div>
+		<div>{% if page.categories.size > 0 %}<i class="fas fa-folder"></i> {% if page.categories.size == 1 %}Category{% else %}Categories{% endif %}: {{ page.categories | join: ", " }}{% if page.categories.size > 0 and page.tags.size > 0 %} &nbsp;&nbsp; {% endif %}{% endif %}{% if page.tags.size > 0 %}<i class="fas fa-tags"></i> Tags: {{ page.tags | join: ", " }} {% endif %}</div>
 	</div>
 	
 	<div>
