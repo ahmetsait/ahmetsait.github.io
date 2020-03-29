@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Hello World!"
+slug: "Hello World!"
 categories: [Test]
 tags: [Hello, World]
 date: 2020-03-27 15:14:20 0300
-permalink: /hello-world
 ---
 
 Testing 1, 2... We good? Alright so I've been thinking about writing a blog post for quite some time now and it seems
