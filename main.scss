@@ -101,7 +101,7 @@ a:hover {
 	font-size: 24px;
 	font-weight: 300;
 	margin-bottom: 5px;
-	color: Gray;
+	color: gray;
 }
 
 .site-nav {
@@ -163,7 +163,7 @@ a:hover {
 // Footer
 
 .site-footer {
-	border-color: LightGray;
+	border-color: lightgray;
 	border-style: solid;
 	border-width: 1px 0px;
 	background-color: #eee;
@@ -173,11 +173,7 @@ a:hover {
 .footer-content {
 	text-align: center;
 	font-size: 16px;
-	color: #828282;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-content: center;
+	color: #595959;
 }
 
 .footer-content .roundbox {
@@ -185,17 +181,12 @@ a:hover {
 	width: 40px;
 	height: 40px;
 	margin: 4px;
-	background-color: White;
-	border: 1px solid White;
+	background-color: white;
 	border-radius: 25%;
-	fill: #444;
+	fill: #595959;
 	text-align: center;
 	vertical-align: middle;
 }
-
-//.footer-content .roundbox:hover {
-//	border: 1px solid Gray;
-//}
 
 .footer-content .roundbox svg {
 	width: 24px;
@@ -206,10 +197,10 @@ a:hover {
 // Ultra cool icon hover coloring
 
 .roundbox svg#envelope { fill: inherit; }
-.roundbox:hover svg#envelope { fill: #000000; }
+.roundbox:hover svg#envelope { fill: black; }
 
 .roundbox svg#github { fill: inherit; }
-.roundbox:hover svg#github { fill: #000000; }
+.roundbox:hover svg#github { fill: black; }
 
 .roundbox svg#gitlab #tanuki-nose { fill: inherit; }
 .roundbox svg#gitlab #tanuki-left-eye { fill: white; }
