@@ -7,8 +7,8 @@ layout: default
 <ul class="post-index">
 	{% for post in site.posts %}
 		<li>
-			<time datetime="{{ post.date | date: "%Y-%m-%d %H:%M %z" }}" title="{{ post.date | date: "%Y-%m-%d %H:%M %z" }}">
-				<i class="far fa-clock"></i> {{ post.date | date: "%b %e, %Y" }}
+			<time datetime="{{ post.date | date: "%Y-%m-%d %H:%M %z" }}">
+				<span title="{{ post.date | date: "%Y-%m-%d %H:%M %z" }}"><i class="far fa-clock"></i> {{ post.date | date: "%b %e, %Y" }}</span>
 			</time>
 			<h2>
 				<a href="{{ post.url | prepend: site.baseurl }}">
