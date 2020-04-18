@@ -1,4 +1,4 @@
-html, body, div, span, applet, object, iframe,
+$tags0: html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -10,13 +10,17 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+time, mark, audio, video;
+
+@each $tag in $tags0 {
+	#{$tag} {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
 }
 
 /* make sure to set some focus styles for accessibility */
@@ -25,18 +29,12 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-	display: block;
+$tags1: article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section;
+
+@each $tag in $tags1 {
+	#{$tag} {
+		display: block;
+	}
 }
 
 body {
@@ -333,12 +331,11 @@ table {
 	border-spacing: 0;
 }
 
-html,
-button,
-input,
-select,
-textarea {
-	color: #222;
+$tags2: html, button, input, select, textarea;
+@each $tag in $tags2 {
+	#{$tag} {
+		color: #222;
+	}
 }
 
 ::-moz-selection {

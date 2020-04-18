@@ -1,10 +1,11 @@
 # Main variables
 name: "Veni Vidi Codi"
-tagline: "Ahmet Sait's Developer Blog"
+tagline: "I came, I saw, I coded"
+tagline_tr: "Geldim, gördüm, kodladım"
 description: "Ahmet Sait's Developer Blog"
-url: "https://ahmetsait.github.io"
+description_tr: "Ahmet Sait'in Yazılım Günlüğü"
 author: "Ahmet Sait"
-lang: en-US
+lang: en
 
 links:
   email: '&#x61;&#x68;&#x6d;&#x65;&#x74;&#x73;&#x61;&#x69;&#x74;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;'
@@ -14,9 +15,22 @@ links:
   stackoverflow: users/3624513/ahmet-sait
   atom: feed # just type anything here for a working RSS icon
 
+collections:
+  posts_en:
+    permalink: /blog/:year/:month/:day/:title
+    output: true
+  posts_tr:
+    permalink: /blog/tr/:year/:month/:day/:title
+    output: true
+
 # Atom Feed Config
 feed:
-  path: venividicodi.atom
+  path: "" # This seems to work fine for disabling default feed
+  collections:
+    posts_en:
+      path: blog/venividicodi.atom
+    posts_tr:
+      path: blog/tr/venividicodi.atom
 
 # Where things are
 source: .
@@ -60,7 +74,6 @@ whitelist: []
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-seo-tag
 
 # Conversion
 markdown: kramdown
@@ -72,14 +85,14 @@ incremental: false
 # Serving
 #detach: false
 #port: 4000
-#host: 127.0.0.1
+#host: 0.0.0.0
 baseurl: "" # the subpath of your site, e.g. /blog
 show_dir_listing: false
 
 # Outputting
-permalink: /:year/:month/:day/:title
-paginate_path: /page/:num
-timezone: null
+permalink: /blog/:year/:month/:day/:title
+paginate_path: /blog/page/:num
+timezone: Asia/Istanbul
 
 quiet: false
 verbose: false

@@ -14,7 +14,7 @@
     Optional Parameters:
       * beforeHeading (bool)   : false  - Set to true if the anchor should be placed _before_ the heading's content
       * anchorAttrs   (string) :  ''    - Any custom HTML attributes that will be added to the `<a>` tag; you may NOT use `href`, `class` or `title`
-      * anchorBody    (string) :  ''    - The content that will be placed inside the anchor; the `%heading%` placeholder is available
+      * anchorBody    (string) :  '#'   - The content that will be placed inside the anchor; the `%heading%` placeholder is available
       * anchorClass   (string) :  ''    - The class(es) that will be used for each anchor. Separate multiple classes with a space
       * anchorTitle   (string) :  ''    - The `title` attribute that will be used for anchors
       * h_min         (int)    :  1     - The minimum header level to build an anchor for; any header lower than this value will be ignored
@@ -83,13 +83,11 @@
         {% capture anchor %}{{ anchor }} {{ include.anchorAttrs }}{% endcapture %}
       {% endif %}
 
-      {% capture anchor %}<a {{ anchor }}>{{ include.anchorBody | replace: '%heading%', header | default: '#' }}</a>{% endcapture %}
-
       <!-- In order to prevent adding extra space after a heading, we'll let the 'anchor' value contain it -->
       {% if beforeHeading %}
-        {% capture anchor %}{{ anchor }} {% endcapture %}
+         {% capture anchor %}<a {{ anchor }}>{{ include.anchorBody | replace: '%heading%', header | default: '#' }}</a><span class="noselect"> </span>{% endcapture %}
       {% else %}
-        {% capture anchor %} {{ anchor }}{% endcapture %}
+         {% capture anchor %}<span class="noselect"> </span><a {{ anchor }}>{{ include.anchorBody | replace: '%heading%', header | default: '#' }}</a>{% endcapture %}
       {% endif %}
     {% endif %}
 

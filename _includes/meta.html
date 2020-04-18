@@ -1,0 +1,93 @@
+{%- if page.collection == "posts_tr" or page.collection == "posts_en" -%}
+	{%- assign post = true -%}
+{%- endif -%}
+<link rel="canonical" href="{{ page.url | absolute_url }}" />
+<meta name="generator" content="Jekyll" />
+<meta name="author" content="{{ page.author | default: site.author }}" />
+<meta name="description" content="{{ description }}" />
+{% if page.tags.size > 0 -%}
+	<meta name="keywords" content="{{ page.tags | join ', ' }}">
+{%- endif %}
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:type" content="{% if post %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}">
+<meta property="og:image" content="{{ '/assets/icon.png' | absolute_url }}">
+<meta property="og:image:type" content="image/png" />
+<meta property="og:description" content="{{ description }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="{{ locale }}">
+{% unless post -%}
+	<meta property="og:locale:alternate" content="{{ locale_alternate }}">
+	{% if lang == "tr" %}
+		<link rel="alternate" href="{{ page.url | absolute_url | replace_first: '/blog/tr', '/blog' }}" hreflang="en">
+	{% elsif lang == "en" %}
+		<link rel="alternate" href="{{ page.url | absolute_url | replace_first: '/blog', '/blog/tr' }}" hreflang="tr">
+	{% endif %}
+{%- endunless %}
+{% if post %}
+	<link rel="index" href="{{ site.url }}/{{ root }}">
+	<meta property="article:author" content="{{ page.author | default: site.author }}">
+	<meta property="article:published_time" content="{{ page.date | date: '%FT%T%:z' }}">
+	<meta property="article:modified_time" content="{{ page.edit | default: page.date | date: '%FT%T%:z' }}">
+	{% if page.categories.size > 0 %}
+		<meta property="article:section" content="{{ page.categories | first }}">
+	{% endif %}
+	{% for tag in page.tags %}
+		<meta property="article:tag" content="{{ tag }}">
+	{% endfor %}
+	<script type="application/ld+json">
+	{
+		"@type": "BlogPosting",
+		"url": "{{ page.url | absolute_url }}",
+		"headline": "{{ page.title | default: site.name }}",
+		"description": "{{ description }}",
+		"datePublished": "{{ page.date | date: '%FT%T%:z' }}",
+		"dateModified": "{{ page.edit | default: page.date | date: '%FT%T%:z' }}",
+		"mainEntityOfPage": {
+			"@type": "WebPage",
+			"@id": "{{ page.url | absolute_url }}"
+		},
+		"image": {
+			"@id": "#icon",
+			"@type": "imageObject",
+			"url": "{{ '/assets/icon.png' | absolute_url }}",
+			"height": "256",
+			"width": "256"
+		},
+		"author": {
+			"@type": "Person",
+			"name": "{{ page.author | default: site.author }}"
+		},
+		"publisher": {
+			"@type": "Person",
+			"name": "{{ site.author }}"
+		},
+		"@context": "https://schema.org"
+	}
+	</script>
+{% else %}
+	<script type="application/ld+json">
+	{
+		"@type": "WebPage",
+		"url": "{{ page.url | absolute_url }}",
+		"headline": "{{ page.title | default: site.name }}",
+		"description": "{{ description }}",
+		"image": {
+			"@type": "imageObject",
+			"url": "{{ '/assets/icon.png' | absolute_url }}",
+			"height": "256",
+			"width": "256"
+		},
+		"author": {
+			"@type": "Person",
+			"name": "{{ page.author | default: site.author }}"
+		},
+		"@context": "https://schema.org"
+	}
+	</script>
+{% endif %}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="{{ page.url | absolute_url }}">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}">
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:image" content="{{ '/assets/icon.png' | absolute_url }}">
