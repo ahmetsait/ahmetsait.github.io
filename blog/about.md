@@ -1,23 +1,33 @@
 ---
 layout: page
 title: About
-permalink: /about
+lang: en
 ---
+
+<div style="float:right">
+	<div class="lang"><i class="fas fa-globe button"></i><div class="menu"><a href="{{ site.baseurl }}/blog/tr/about" 
+		lang="tr">Türkçe</a><a href="{{ page.url | relative_url }}" lang="en">English</a></div></div>
+</div>
 
 ## About this blog
 Here you will *(hopefully)* find blog posts about many different topics ranging from game development to microcontroller
-programming, image processing to language design, graphics programming to data serialization, metaprogramming to
-machine learning, anything and everything in between computer science with occasional rants of pure rage.
+programming, image processing to language design, graphics programming to data serialization, metaprogramming to machine
+learning, anything and everything in between computer science with occasional rants of pure rage.
 
-I will be posting *(again, hopefully)* about my projects, interesting problems I may have solved, cool language concepts
+I will be posting *(again, hopefully)* about my projects, interesting problems I may have solved, cool concepts, designs
 and technical stuff I do in general.
 
 This website is created using [Jekyll](https://jekyllrb.com) with a handcrafted template and custom theme to be served
 on [GitHub Pages](https://pages.github.com). You can check out the original
 [repo](https://github.com/ahmetsait/ahmetsait.github.io) if you wish to do so.
 
+As you may have noticed, I built the website to support both English and Turkish but since I'm handwriting the
+translations myself there is no guarantee that the content will be the same for both, which means you might not be able
+to find the English equivalent of a Turkish post or vice versa. To change the current language you can use the
+<i class="fas" style="color:#595959">&#xf0ac;</i> icon at the top-right corner.
+
 ## About me
-<img style="width:100px;float:right" src="{{ site.baseurl }}/assets/image/profile.png"
+<img class="noselect" style="width:100px;height:134.30630604px;float:right" src="{{ site.baseurl }}/assets/profile.svg"
 	alt="Hypergon from Chaos Faction 2"
 	title="Hypergon from Chaos Faction 2&#x0d;I'm using it as my profile picture at various places on the web">
 

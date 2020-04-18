@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% if page.lang == "tr" %}
+	{% assign lang = "tr" %}
+	{% assign locale = "tr_TR" %}
+	{% assign locale_alternate = "en_US" %}
+	{% assign root = "blog/tr" %}
+	{% assign feed = "blog/tr/venividicodi.atom" %}
+	{% assign tagline = site.tagline_tr %}
+	{% assign description = site.description_tr %}
+{% elsif page.lang == "en" %}
+	{% assign lang = "en" %}
+	{% assign locale = "en_US" %}
+	{% assign locale_alternate = "tr_TR" %}
+	{% assign root = "blog" %}
+	{% assign feed = "blog/venividicodi.atom" %}
+	{% assign tagline = site.tagline %}
+	{% assign description = site.description %}
+{% endif %}
+{% capture title %}{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} • {{ description }}{% endcapture %}
+<html lang="{% if lang %}{{ lang }}{% else %}{{ site.lang }}{% endif %}">
+	<head>
+		<title>{{ title }}</title>
+		
+		<meta charset="utf-8" />
+		<meta content="text/html" http-equiv="Content-Type">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="stylesheet" href="{{ site.baseurl }}/main.css" />
+		
+		<link rel="alternate" type="application/atom+xml" href="{{ feed | relative_url }}" title="Veni Vidi Codi" />
+
+{% include meta.html %}
+	</head>
+	
+	<body>
+		<header class="site-header">
+			<div class="container clearfix header-flex">
+				<div class="site-title">
+					<h1 class="site-name" lang="en"><a href="{{ site.baseurl }}/{{ root }}">{{ site.name }}</a></h1>
+					<h2 class="site-description">{{ description }}</h2>
+				</div>
+				<nav class="site-nav">
+				{% if lang == "tr" %}
+					<li><a href="{{ site.baseurl }}/{{ root }}/about">Hakkında</a></li>
+				{% else %}
+					<li><a href="{{ site.baseurl }}/{{ root }}/about">About</a></li>
+				{% endif %}
+				</nav>
+			</div>
+		</header>
+		
+		<main class="page-content">
+			<div class="container">
+{{ content }}
+			</div>
+		</main>
+		
+		<footer class="site-footer">
+			<div class="container">
+				<div class="footer-content">
+{% include svg-icons.html %}
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

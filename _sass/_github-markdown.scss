@@ -533,18 +533,61 @@
 	vertical-align: middle;
 }
 
+/* Anchor Headings */
+
+.markdown-body .anchor:focus {
+	outline: none;
+}
+
+.markdown-body h1 .anchor,
+.markdown-body h2 .anchor,
+.markdown-body h3 .anchor,
+.markdown-body h4 .anchor,
+.markdown-body h5 .anchor,
+.markdown-body h6 .anchor {
+	color: cornflowerblue;
+	visibility: hidden;
+	@media screen and (hover: none) {
+		color: #6495ed80;
+		visibility: visible;
+	}
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+	visibility: visible;
+	text-decoration: none;
+}
+
 /* Kramdown */
 
 .markdown-body sup {
-	font-variant: super;
+	//font-variant: super;
+	vertical-align: super;
+	font-size: x-small;
 }
 
 .markdown-body sub {
-	font-variant: sub;
+	//font-variant: sub;
+	vertical-align: sub;
+	font-size: x-small;
+}
+
+.markdown-body abbr {
+	cursor: help;
 }
 
 @media screen and (hover: none) {
 	.markdown-body abbr {
 		text-decoration: none;
 	}
+}
+
+.markdown-body .footnotes {
+	font-size: 80%;
+	border-top: 1px solid lightgray;
 }
