@@ -14,11 +14,50 @@
 
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
 readers do not read off random characters that represent icons */
+.fa-anchor:before {
+  content: "\f13d"; }
+
 .fa-clock:before {
   content: "\f017"; }
 
+.fa-edit:before {
+  content: "\f044"; }
+
+.fa-external-link-alt:before {
+  content: "\f35d"; }
+
+.fa-feather:before {
+  content: "\f52d"; }
+
+.fa-feather-alt:before {
+  content: "\f56b"; }
+
 .fa-folder:before {
   content: "\f07b"; }
+
+.fa-globe:before {
+  content: "\f0ac"; }
+
+.fa-link:before {
+  content: "\f0c1"; }
+
+.fa-pen:before {
+  content: "\f304"; }
+
+.fa-pen-alt:before {
+  content: "\f305"; }
+
+.fa-pen-fancy:before {
+  content: "\f5ac"; }
+
+.fa-pen-nib:before {
+  content: "\f5ad"; }
+
+.fa-pencil-alt:before {
+  content: "\f303"; }
+
+.fa-rss:before {
+  content: "\f09e"; }
 
 .fa-tags:before {
   content: "\f02c"; }

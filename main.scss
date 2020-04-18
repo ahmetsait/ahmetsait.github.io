@@ -2,6 +2,7 @@
 ---
 
 @import "reset";
+@import "fontawesome";
 
 $default-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 $default-monospace: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
@@ -16,36 +17,6 @@ body {
 	//min-height: 100vh;
 }
 
-.markdown-body .anchor:focus {
-	outline: none;
-}
-
-.markdown-body h1 .anchor,
-.markdown-body h2 .anchor,
-.markdown-body h3 .anchor,
-.markdown-body h4 .anchor,
-.markdown-body h5 .anchor,
-.markdown-body h6 .anchor {
-	visibility: hidden;
-	@media screen and (hover: none) {
-		visibility: visible;
-	}
-}
-
-.markdown-body h1:hover .anchor,
-.markdown-body h2:hover .anchor,
-.markdown-body h3:hover .anchor,
-.markdown-body h4:hover .anchor,
-.markdown-body h5:hover .anchor,
-.markdown-body h6:hover .anchor {
-	visibility: visible;
-}
-
-.markdown-body .footnotes {
-	font-size: 80%;
-	border-top: 1px solid lightgray;
-}
-
 a {
 	color: #0366d6;
 	text-decoration: none;
@@ -57,6 +28,14 @@ a:visited {
 
 a:hover {
 	text-decoration: underline;
+}
+
+.noselect {
+	user-select: none;
+}
+
+img {
+	user-select: none;
 }
 
 // Container
@@ -110,7 +89,16 @@ a:hover {
 	vertical-align: middle;
 }
 
-@media screen and (max-width: 450px) {
+.site-nav li {
+	display: inline-block;
+	text-decoration: inherit;
+}
+
+.site-nav li:not(:first-child) {
+	margin-left: 20px;
+}
+
+@media screen and (max-width: 600px) {
 	.site-title {
 		text-align: center;
 	}
@@ -121,6 +109,66 @@ a:hover {
 	.header-flex {
 		 flex-direction: column;
 	}
+}
+
+// Round button
+
+.button {
+	color: #595959;
+	padding: 9px;
+	border: solid silver 1px;
+	border-radius: 25%;
+	width: 1em;
+	height: 1em;
+	text-align: center;
+}
+
+// Feed
+
+.feed {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.feed:hover .button {
+	color: #ff7f00;
+}
+
+// Language
+
+.lang {
+	display: inline-block;
+}
+
+.lang .button {
+	box-sizing: content-box;
+}
+
+.lang:hover .button {
+	color: black;
+}
+
+.lang .menu {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	text-align: center;
+	background-color: white;
+	margin-left: -82 + 36px;
+	@media screen and (hover: none) {
+		// Workaround for touch screen bullshit
+		padding-top: 1.5em;
+	}
+}
+
+.lang .menu a {
+	display: block;
+	padding: 0.25em 1em;
+}
+
+.lang:hover .menu {
+	display: block;
 }
 
 // Index
@@ -140,24 +188,85 @@ a:hover {
 	margin-bottom: 30px;
 }
 
-.post-index time {
-	line-height: 1.0;
-	display: block;
-	font-size: 12px;
-	color: #828282;
-}
-
 .post-index .meta {
 	display: block;
 	font-size: 12px;
 	color: #828282;
 }
 
+.post-index .meta .date {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.post-index .meta .edit {
+	display: inline-block;
+}
+
+.post-index .meta .categories {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.post-index .meta .tags {
+	display: inline-block;
+}
+
+// Post
+
+.post-meta {
+	display: block;
+	margin-top: -10px;
+	margin-bottom: 16px;
+	font-size: 14px;
+	color: #828282;
+	border-bottom: 1px solid #eaecef;
+	padding-bottom: 6px;
+}
+
+.post-meta .date {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.post-meta .edit {
+	display: inline-block;
+}
+
+.post-meta .categories {
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: 0px;
+}
+
+.post-meta .tags {
+	display: inline-block;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+@media screen and (min-width: 800px) {
+	.post-meta .topics {
+		float: right;
+	}
+
+	.post-meta .categories {
+		display: inline-block;
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+
+	.post-meta .tags {
+		display: inline-block;
+		margin-right: 0px;
+		margin-left: 10px;
+	}
+}
+
 // Page
 
 .page-content {
 	padding: 30px 0;
-	//flex: 1;
 }
 
 // Footer
@@ -225,25 +334,5 @@ a:hover {
 .roundbox:hover svg#stack-overflow #stack { fill: #bcbbbb; }
 .roundbox:hover svg#stack-overflow #overflow { fill: #f48023; }
 
-.roundbox svg#atom { fill: inherit; }
-.roundbox:hover svg#atom { fill: #ff7f00; }
-
-// Post
-
-.post-meta {
-	display: block;
-	margin-top: -10px;
-	margin-bottom: 10px;
-	font-size: 14px;
-	color: #828282;
-}
-
-@media screen and (min-width: 800px) {
-	.post-meta > div {
-		float: right;
-	}
-}
-
-@import "fontawesome";
 @import "github-markdown";
 @import "syntax-monokai-sublime";
