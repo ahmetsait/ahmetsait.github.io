@@ -42,7 +42,7 @@ layout: blog
 						{%- if page.lang == "tr" -%}
 							<i class="far fa-clock"></i> {{ post.date | date: "%-d" }} {{ month }} {{ post.date | date: "%Y" }}
 						{%- elsif page.lang == "en" -%}
-							<i class="far fa-clock"></i> {{ post.date | date: "%B %e, %Y" }}
+							<i class="far fa-clock"></i> {{ post.date | date: "%b %e, %Y" }}
 						{%- endif -%}
 					</time>
 					{%- if post.edit -%}
@@ -77,7 +77,7 @@ layout: blog
 			<li>
 				<div class="meta">
 					<time class="date" datetime="{{ post.date | date: '%FT%T%:z' }}" title="{{ post.date | date: '%F %T %:z' }}">
-						<i class="far fa-clock"></i> {{ post.date | date: "%B %e, %Y" }}
+						<i class="far fa-clock"></i> {{ post.date | date: "%b %e, %Y" }}
 					</time>
 					{%- if post.edit -%}
 						<time class="edit" datetime="{{ post.edit | date: '%FT%T%:z' }}" title="{{ post.edit | date: '%F %T %:z' }}">
