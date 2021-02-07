@@ -1,3 +1,5 @@
+source 'https://rubygems.org'
+
 gem 'github-pages', '~> 204'
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
