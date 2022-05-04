@@ -1,20 +1,18 @@
 {%- if page.collection == "posts_tr" or page.collection == "posts_en" -%}
 	{%- assign post = true -%}
 {%- endif -%}
-<link rel="canonical" href="{{ page.url | absolute_url }}" />
-<meta name="generator" content="Jekyll" />
-<meta name="author" content="{{ page.author | default: site.author }}" />
-<meta name="description" content="{{ description }}" />
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta name="generator" content="Jekyll">
+<meta name="author" content="{{ page.author | default: site.author }}">
+<meta name="description" content="{{ description }}">
 {% if page.tags.size > 0 -%}
 	<meta name="keywords" content="{{ page.tags | join ', ' }}">
 {%- endif %}
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:type" content="{% if post %}article{% else %}website{% endif %}">
 <meta property="og:title" content="{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}">
-<meta property="og:image" content="{{ '/assets/icon.svg' | absolute_url }}">
-<meta property="og:image:type" content="image/svg+xml" />
 <meta property="og:image" content="{{ '/assets/icon.png' | absolute_url }}">
-<meta property="og:image:type" content="image/png" />
+<meta property="og:image:type" content="image/png">
 <meta property="og:description" content="{{ description }}">
 <meta property="og:site_name" content="{{ site.name }}">
 <meta property="og:locale" content="{{ locale }}">
