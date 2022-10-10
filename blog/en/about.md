@@ -1,15 +1,11 @@
 ---
+group: about
 layout: page
 title: About
-lang: en
+excerpt: Here you will (hopefully) find blog posts about many different topics ranging from game development to microcontroller programming, image processing to language design, graphics programming to data serialization, metaprogramming to machine learning, anything and everything in between computer science with occasional rants of pure rage.
 ---
 
-<div style="float:right">
-	<div class="lang"><i class="fas fa-globe button"></i><div class="menu"><a href="{{ site.baseurl }}/blog/tr/about" 
-		lang="tr">Türkçe</a><a href="{{ page.url | relative_url }}" lang="en">English</a></div></div>
-</div>
-
-## About this blog
+# About this blog
 Here you will *(hopefully)* find blog posts about many different topics ranging from game development to microcontroller
 programming, image processing to language design, graphics programming to data serialization, metaprogramming to machine
 learning, anything and everything in between computer science with occasional rants of pure rage.
@@ -24,10 +20,10 @@ on [GitHub Pages](https://pages.github.com). You can check out the original
 As you may have noticed, I built the website to support both English and Turkish but since I'm handwriting the
 translations myself there is no guarantee that the content will be the same for both, which means you might not be able
 to find the English equivalent of a Turkish post or vice versa. To change the current language you can use the
-<i class="fas" style="color:#595959">&#xf0ac;</i> icon at the top-right corner.
+<i class="fas fa-earth-americas"></i> icon at the top-right corner.
 
-## About me
-<img class="noselect" style="width:100px;height:134.30630604px;float:right" src="{{ site.baseurl }}/assets/profile.svg"
+# About me
+<img class="noselect" style="width:100px;height:134.30630604px;float:right" src="{{ 'assets/profile.svg' | relative_url }}"
 	alt="Hypergon from Chaos Faction 2"
 	title="Hypergon from Chaos Faction 2&#x0d;I'm using it as my profile picture at various places on the web">
 
@@ -38,6 +34,6 @@ growing list of ideas and things to do.
 You will see me developing and contributing to open source projects or if I'm not doing that I'm probably coding my next
 great game idea in my basement that will likely never see the light of day.
 
-### Hiring?
+## Hiring?
 Looking for developer equivalent of a Swiss army knife? Need a fast learning junior with the experience of a senior?
 Look no further! You can contact me via the links below.

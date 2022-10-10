@@ -1,9 +1,8 @@
 ---
-layout: post
-title: "Merhaba Dünya!"
-slug: "Merhaba Dünya!"
+group: hello_world
+title: &title "Merhaba Dünya!"
+slug: "Merhaba-Dunya!"
 date: 2020-04-18 08:58:25 +0300
-lang: tr
 ---
 
 Ses 1, 2... Tamam mıyız? Güzel. Şimdi ben epey bir zamandır blog yazmayı düşünüyordum ve şu sıralar içinde bulunduğumuz

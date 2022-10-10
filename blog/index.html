@@ -1,6 +1,10 @@
 ---
-layout: index
-lang: en
+layout:
 ---
-
-{{ content }}
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="canonical" href="{{ 'blog' | relative_url }}" />
+		<meta http-equiv="refresh" content="0; url={{ site.langs[page.lang].blog.index | relative_url }}">
+	</head>
+</html>

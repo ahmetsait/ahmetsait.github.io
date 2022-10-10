@@ -1,10 +1,9 @@
 ---
-layout: post
-title: "Hello World!"
-slug: "Hello World!"
+group: hello_world
+title: &title "Hello World!"
+slug: *title
 date: 2020-03-27 15:14:20 +0300
 edit: 2020-04-18 08:59:33 +0300
-lang: en
 ---
 
 Testing 1, 2... We good? Alright so I've been thinking about writing a blog post for quite some time now and it seems
