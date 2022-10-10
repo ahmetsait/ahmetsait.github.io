@@ -1,0 +1,10 @@
+---
+index:
+  en: blog/en/index.html
+  tr: blog/tr/index.html
+about:
+  en: blog/en/about.md
+  tr: blog/tr/hakkinda.md
+hello_world:
+  en: _posts_en/2020-03-27-Hello-World.md
+  tr: _posts_tr/2020-04-16-Merhaba-Dünya.md

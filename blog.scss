@@ -2,7 +2,6 @@
 ---
 
 @import "reset";
-@import "fontawesome";
 
 $default-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 $default-monospace: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
@@ -15,6 +14,13 @@ body {
 	//display: flex;
 	//flex-direction: column;
 	//min-height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		color: #e5d8c4;
+		background-color: black;
+	}
 }
 
 a {
@@ -30,12 +36,26 @@ a:hover {
 	text-decoration: underline;
 }
 
-.noselect {
-	user-select: none;
+@media (prefers-color-scheme: dark) {
+	a {
+		color: #4b7ff1;
+	}
+
+	a:visited {
+		color: #4b7ff1;
+	}
 }
 
 img {
 	user-select: none;
+}
+
+.noselect {
+	user-select: none;
+}
+
+.hidden {
+	display: none;
 }
 
 // Container
@@ -60,6 +80,13 @@ img {
 	border-bottom: 1px solid #e8e8e8;
 }
 
+@media (prefers-color-scheme: dark) {
+	.site-header {
+		border-top: 5px solid #051928;
+		border-bottom: 1px solid #051928;
+	}
+}
+
 .header-flex {
 	display: flex;
 	justify-content: space-between;
@@ -81,6 +108,12 @@ img {
 	font-weight: 300;
 	margin-bottom: 5px;
 	color: gray;
+}
+
+@media (prefers-color-scheme: dark) {
+	.site-description {
+		color: #6d6e70;
+	}
 }
 
 .site-nav {
@@ -111,70 +144,104 @@ img {
 	}
 }
 
-// Round button
-
-.button {
-	color: #595959;
-	padding: 9px;
-	border: solid silver 1px;
-	border-radius: 25%;
-	width: 1em;
-	height: 1em;
-	text-align: center;
-}
-
 // Feed
 
 .feed {
 	display: inline-block;
-	margin-right: 10px;
 }
 
-.feed:hover .button {
-	color: #ff7f00;
-}
-
-// Language
-
-.lang {
-	display: inline-block;
-}
-
-.lang .button {
+.feed i {
 	box-sizing: content-box;
-}
-
-.lang:hover .button {
-	color: black;
-}
-
-.lang .menu {
-	display: none;
-	position: absolute;
-	z-index: 1;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	color: #595959;
+	padding: 9px;
+	border: solid silver 1px;
+	border-radius: 25%;
 	text-align: center;
-	background-color: white;
-	margin-left: -82 + 36px;
-	@media screen and (hover: none) {
-		// Workaround for touch screen bullshit
-		padding-top: 1.5em;
+	width: 1em;
+	height: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+	.feed i {
+		color: #9a9690;
+		border: solid #2c3642 1px;
 	}
 }
 
-.lang .menu a {
-	display: block;
-	padding: 0.25em 1em;
+.feed:hover i {
+	color: #ff7f00;
 }
 
-.lang:hover .menu {
+// Language Dropdown
+
+.dropdown {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.dropdown-button {
+	display: inline-block;
+	box-sizing: content-box;
+	color: #595959;
+	background-color: transparent;
+	padding: 9px;
+	border: solid silver 1px;
+	border-radius: 25%;
+	text-align: center;
+	line-height: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+	.dropdown-button {
+		color: #9a9690;
+		border: solid #2c3642 1px;
+	}
+}
+
+.dropdown-button i {
+	width: 1em;
+	height: 1em;
+}
+
+.dropdown-button:hover {
+	color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+	.dropdown-button:hover {
+		color: white;
+	}
+}
+
+.dropdown-menu {
+	position: absolute;
+	box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.2);
+	background-color: white;
+	border-radius: 5px;
+	text-align: center;
+	margin-left: -82 + 36px;
+}
+
+@media (prefers-color-scheme: dark) {
+	.dropdown-menu {
+		box-shadow: 0px 10px 16px 0px rgba(255, 255, 255, 0.2);
+		background-color: black;
+	}
+}
+
+.dropdown-menu-item {
 	display: block;
+	padding: 0.25em 1em;
 }
 
 // Index
 
 .post-index li {
 	margin-top: 30px;
+}
+
+.post-index:last-child li {
+	margin-bottom: 15px;
 }
 
 .post-index h2 {
@@ -192,6 +259,12 @@ img {
 	display: block;
 	font-size: 12px;
 	color: #828282;
+}
+
+@media (prefers-color-scheme: dark) {
+	.post-index .meta {
+		color: #6b6c6e;
+	}
 }
 
 .post-index .meta .date {
@@ -222,6 +295,13 @@ img {
 	color: #828282;
 	border-bottom: 1px solid #eaecef;
 	padding-bottom: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+	.post-meta {
+		color: #6b6c6e;
+		border-bottom: 1px solid #001728;
+	}
 }
 
 .post-meta .date {
@@ -279,10 +359,23 @@ img {
 	padding: 15px 0;
 }
 
+@media (prefers-color-scheme: dark) {
+	.site-footer {
+		border-color: #1a2835;
+		background-color: #001525;
+	}
+}
+
 .footer-content {
 	text-align: center;
 	font-size: 16px;
 	color: #595959;
+}
+
+@media (prefers-color-scheme: dark) {
+	.footer-content {
+		color: #9a9690;
+	}
 }
 
 .footer-content .roundbox {
@@ -297,6 +390,13 @@ img {
 	vertical-align: middle;
 }
 
+@media (prefers-color-scheme: dark) {
+	.footer-content .roundbox {
+		background-color: black;
+		fill: #9a9690;
+	}
+}
+
 .footer-content .roundbox svg {
 	width: 24px;
 	height: 24px;
@@ -307,24 +407,16 @@ img {
 
 .roundbox svg#envelope { fill: inherit; }
 .roundbox:hover svg#envelope { fill: black; }
+@media (prefers-color-scheme: dark) { .roundbox:hover svg#envelope { fill: white; } }
 
 .roundbox svg#github { fill: inherit; }
 .roundbox:hover svg#github { fill: black; }
+@media (prefers-color-scheme: dark) { .roundbox:hover svg#github { fill: white; } }
 
-.roundbox svg#gitlab #tanuki-nose { fill: inherit; }
-.roundbox svg#gitlab #tanuki-left-eye { fill: white; }
-.roundbox svg#gitlab #tanuki-left-cheek { fill: inherit; }
-.roundbox svg#gitlab #tanuki-left-ear { fill: inherit; }
-.roundbox svg#gitlab #tanuki-right-eye { fill: white; }
-.roundbox svg#gitlab #tanuki-right-cheek { fill: inherit; }
-.roundbox svg#gitlab #tanuki-right-ear { fill: inherit; }
-.roundbox:hover svg#gitlab #tanuki-nose { fill: #e24329; }
-.roundbox:hover svg#gitlab #tanuki-left-eye { fill: #fc6d26; }
-.roundbox:hover svg#gitlab #tanuki-left-cheek { fill: #fca326; }
-.roundbox:hover svg#gitlab #tanuki-left-ear { fill: #e24329; }
-.roundbox:hover svg#gitlab #tanuki-right-eye { fill: #fc6d26; }
-.roundbox:hover svg#gitlab #tanuki-right-cheek { fill: #fca326; }
-.roundbox:hover svg#gitlab #tanuki-right-ear { fill: #e24329; }
+.roundbox svg#gitlab { fill: inherit; }
+.roundbox:hover svg#gitlab .cls-1 { fill:#e24329; }
+.roundbox:hover svg#gitlab .cls-2 { fill:#fc6d26; }
+.roundbox:hover svg#gitlab .cls-3 { fill:#fca326; }
 
 .roundbox svg#linkedin { fill: inherit; }
 .roundbox:hover svg#linkedin { fill: #0077b5; }

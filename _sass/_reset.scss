@@ -184,6 +184,12 @@ fieldset {
 	padding: 0.35em 0.625em 0.75em;
 }
 
+@media (prefers-color-scheme: dark) {
+	fieldset {
+		border: 1px solid #2c3642;
+	}
+}
+
 /**
  * 1. Correct color not being inherited in IE 6/7/8/9.
  * 2. Correct text not wrapping in Firefox 3.
@@ -348,6 +354,16 @@ $tags2: html, button, input, select, textarea;
 	text-shadow: none;
 }
 
+@media (prefers-color-scheme: dark) {
+	::-moz-selection {
+		background: #002d58;
+	}
+	
+	::selection {
+		background: #002d58;
+	}
+}
+
 img {
 	vertical-align: middle;
 }
@@ -367,4 +383,11 @@ textarea {
 	background: #ccc;
 	color: #000;
 	padding: 0.2em 0;
+}
+
+@media (prefers-color-scheme: dark) {
+	.chromeframe {
+		background: #212d3a;
+		color: #fffcdd;
+	}
 }

@@ -1,60 +1,38 @@
 ---
 layout: blog
 ---
-{% assign month = page.date | date: "%-m" %}
-{% case month %}
-	{% when  '1' %}{% assign month = "Ocak" %}
-	{% when  '2' %}{% assign month = "Şubat" %}
-	{% when  '3' %}{% assign month = "Mart" %}
-	{% when  '4' %}{% assign month = "Nisan" %}
-	{% when  '5' %}{% assign month = "Mayıs" %}
-	{% when  '6' %}{% assign month = "Haziran" %}
-	{% when  '7' %}{% assign month = "Temmuz" %}
-	{% when  '8' %}{% assign month = "Ağustos" %}
-	{% when  '9' %}{% assign month = "Eylül" %}
-	{% when '10' %}{% assign month = "Ekim" %}
-	{% when '11' %}{% assign month = "Kasım" %}
-	{% when '12' %}{% assign month = "Aralık" %}
-{% endcase %}
+{%- assign post_day = page.date | date: "%e" -%}
+{%- assign post_month = page.date | date: "%B" -%}
+{%- assign post_year = page.date | date: "%Y" -%}
+{%- assign edit_day = page.edit | date: "%e" -%}
+{%- assign edit_month = page.edit | date: "%B" -%}
+{%- assign edit_year = page.edit | date: "%Y" -%}
 <article class="markdown-body">
 	<h1>{{ page.title }}</h1>
 	
 	<div class="post-meta">
-		<time class="date" datetime="{{ page.date | date: '%FT%T%:z' }}" title="{{ page.date | date: '%F %T %:z' }}">
-			{%- if page.lang == "tr" -%}
-				<i class="far fa-clock"></i> {{ page.date | date: "%-d" }} {{ month }} {{ page.date | date: "%Y" }}
-			{%- elsif page.lang == "en" -%}
-				<i class="far fa-clock"></i> {{ page.date | date: "%B %e, %Y" }}
-			{%- endif -%}
+		<time class="date" datetime="{{ page.date | date: '%FT%T%:z' }}" title="{{ site.data.translations['Posted'][page.lang] }}: {{ page.date | date: '%F %T %:z' }}">
+			<i class="far fa-clock"></i> {{ post_day }} {{ site.data.translations[post_month][page.lang] }} {{ post_year -}}
 		</time>
 		{%- if page.edit -%}
-			<time class="edit" datetime="{{ page.edit | date: '%FT%T%:z' }}" title="{{ page.edit | date: '%F %T %:z' }}">
-				{%- if page.lang == "tr" -%}
-					<i class="fas fa-pen"></i> {{ page.edit | date: "%-d" }} {{ month }} {{ page.edit | date: "%Y" }}
-				{%- elsif page.lang == "en" -%}
-					<i class="fas fa-pen"></i> {{ page.edit | date: "%B %e, %Y" }}
-				{%- endif -%}
+			<time class="edit" datetime="{{ page.edit | date: '%FT%T%:z' }}" title="{{ site.data.translations['Edited'][page.lang] }}: {{ page.edit | date: '%F %T %:z' }}">
+				<i class="fas fa-pen"></i> {{ edit_day }} {{ site.data.translations[edit_month][page.lang] }} {{ edit_year -}}
 			</time>
 		{%- endif -%}
 		
 		{% if page.categories.size > 0 or page.tags.size > 0 %}
 			<div class="topics">
 				{%- if page.categories.size > 0 -%}
-					<span class="categories"><i class="fas fa-folder"></i>
-					{% if page.categories.size == 1 -%}
-						{%- if page.lang == "tr" -%}Kategori{%- elsif page.lang == "en" -%}Category{%- endif -%}
-					{%- else -%}
-						{%- if page.lang == "tr" -%}Kategoriler{%- elsif page.lang == "en" -%}Categories{%- endif -%}
-					{%- endif %}: {{ page.categories | join: ", " }}</span>
+					<span class="categories"><i class="fas fa-folder"></i> {% if page.categories.size == 1 %}{{ site.data.translations['Category'][page.lang] }}{% else %}{{ site.data.translations['Categories'][page.lang] }}{% endif %}: {{ page.categories | join: ", " }}</span>
 				{%- endif %}
 				{%- if page.tags.size > 0 -%}
-					<span class="tags"><i class="fas fa-tags"></i> {% if page.lang == "tr" -%}Etiketler{%- elsif page.lang == "en" -%}Tags{%- endif %}: {{ page.tags | join: ", " }}</span>
+					<span class="tags"><i class="fas fa-tags"></i> {{ site.data.translations['Tags'][page.lang] }}: {{ page.tags | join: ", " }}</span>
 				{%- endif -%}
 			</div>
 		{% endif %}
 	</div>
 	
 	<div>
-{% include anchor_headings.html html=content anchorClass='anchor fas noselect' anchorBody='&#xf13d;' %}
+{% include anchor-headings.html html=content anchorClass='anchor fas noselect' anchorBody='&#xf13d;' %}
 	</div>
 </article>

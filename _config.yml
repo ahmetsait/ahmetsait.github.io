@@ -1,14 +1,29 @@
-# Main variables
-name: "Veni Vidi Codi"
-tagline: "I came, I saw, I coded"
-tagline_tr: "Geldim, gördüm, kodladım"
-description: "Ahmet Sait's Developer Blog"
-description_tr: "Ahmet Sait'in Yazılım Günlüğü"
+---
+title: "Veni Vidi Codi"
+description: "Ahmet Sait's Software Blog"
 author: "Ahmet Sait"
-lang: en
+
+langs:
+  en:
+    name: 'English'
+    locale: "en_US"
+    blog:
+      index: "blog/en"
+      about: "blog/en/about"
+      feed: "blog/en/venividicodi.atom"
+      tagline: "I came, I saw, I coded"
+      description: "Ahmet Sait's Software Blog"
+  tr:
+    name: 'Türkçe'
+    locale: "tr_TR"
+    blog:
+      index: "blog/tr"
+      about: "blog/tr/hakkinda"
+      feed: "blog/tr/venividicodi.atom"
+      tagline: "Geldim, gördüm, kodladım"
+      description: "Ahmet Sait'in Yazılım Günlüğü"
 
 links:
-  email: '&#x61;&#x68;&#x6d;&#x65;&#x74;&#x73;&#x61;&#x69;&#x74;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;'
   github: ahmetsait
   gitlab: ahmetsait
   linkedin: ahmetsait
@@ -17,10 +32,10 @@ links:
 
 collections:
   posts_en:
-    permalink: /blog/:year/:month/:day/:title
+    permalink: /blog/en/:title
     output: true
   posts_tr:
-    permalink: /blog/tr/:year/:month/:day/:title
+    permalink: /blog/tr/:title
     output: true
 
 # Atom Feed Config
@@ -28,9 +43,41 @@ feed:
   path: "" # This seems to work fine for disabling default feed
   collections:
     posts_en:
-      path: blog/venividicodi.atom
+      path: blog/en/venividicodi.atom
     posts_tr:
       path: blog/tr/venividicodi.atom
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "main"
+      lang: "en"
+  -
+    scope:
+      path: "_posts_en"
+      type: "posts_en"
+    values:
+      layout: "post"
+      lang: "en"
+  -
+    scope:
+      path: "blog/en"
+    values:
+      lang: "en"
+  -
+    scope:
+      path: "_posts_tr"
+      type: "posts_tr"
+    values:
+      layout: "post"
+      lang: "tr"
+  -
+    scope:
+      path: "blog/tr"
+    values:
+      lang: "tr"
 
 # Where things are
 source: .
@@ -64,7 +111,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 strict_front_matter: false
 
 # Filtering Content
-show_drafts: null
+show_drafts: false
 limit_posts: 0
 future: false
 unpublished: false
@@ -79,24 +126,24 @@ plugins:
 markdown: kramdown
 highlighter: rouge
 lsi: false
+page_excerpts: true
 excerpt_separator: "\n\n"
 incremental: false
 
 # Serving
 #detach: false
 #port: 4000
-#host: 0.0.0.0
+host: 0.0.0.0
 baseurl: "" # the subpath of your site, e.g. /blog
 show_dir_listing: false
 
 # Outputting
-permalink: /blog/:year/:month/:day/:title
+permalink: /blog/:title
 paginate_path: /blog/page/:num
 timezone: Asia/Istanbul
 
 quiet: false
 verbose: false
-defaults: []
 
 liquid:
   error_mode: warn
