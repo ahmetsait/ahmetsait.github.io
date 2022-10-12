@@ -1,8 +1,9 @@
 ---
 group: hello_world
-title: &title "Merhaba Dünya!"
-slug: "Merhaba-Dunya!"
+title: "Merhaba Dünya!"
+slug: "Merhaba-Dunya"
 date: 2020-04-18 08:58:25 +0300
+edit: 2022-10-12 22:10:00 +0300
 ---
 
 Ses 1, 2... Tamam mıyız? Güzel. Şimdi ben epey bir zamandır blog yazmayı düşünüyordum ve şu sıralar içinde bulunduğumuz
@@ -50,7 +51,6 @@ geldiğimizi düşünüyorsan gaflet içinde yüzdüğünü söylemek zorundayı
 gavur olup çıktın!"* diye haykırınca şalterlerim attı. Zaten aklımı yeterince kaybetmiştim kalanı da çarşıya çıksa ne
 olurdu sanki? En azından çürümeye yüz tutmuş Türkçemi biraz adam ederim de kendi insanıma faydam dokunur diyerek elleri
 sıvadım ve bir güzel yıkadım (malum hijyen önemli). Hummalı bir çalışmanın sonucu siteyi iki dili de destekleyecek
-şekilde güncellemekle kalmayıp hali hazırda okuduğun yazıyı da çevirerek blogumu bir web günlüğüne çevirmiş oldum (web
-de ne demekse artık?) ve tabi bu sırada birçok şeyin nasıl çalıştığını (ve nasıl çalışmadığını) öğrenmiş oldum.
+şekilde güncellemekle kalmayıp hali hazırda okuduğun yazıyı da çevirerek web blogumu bir ağ günlüğüne çevirmiş oldum ve tabi bu sırada birçok şeyin nasıl çalıştığını (ve nasıl çalışmadığını) öğrenmiş oldum.
 
 Sana da tadını çıkarmak düşüyor :)
