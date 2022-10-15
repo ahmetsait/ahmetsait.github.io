@@ -11,9 +11,9 @@ body {
 	line-height: 1.5;
 	-moz-tab-size: 4;
 	tab-size: 4;
-	//display: flex;
-	//flex-direction: column;
-	//min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 a {
@@ -309,6 +309,7 @@ button.dropdown-menu-item:hover {
 
 .page-content {
 	padding: 30px 0;
+	flex-grow: 1;
 }
 
 // Footer
