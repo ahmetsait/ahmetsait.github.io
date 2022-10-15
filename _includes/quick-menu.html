@@ -1,0 +1,26 @@
+<div class="quick-menu" style="float:right">
+	{%- if page.layout == "index" -%}
+		<a class="feed" title="Atom Feed" href="{{ site.langs[page.lang].blog.feed | relative_url }}" type="application/atom+xml"><i class="fas fa-rss"></i></a>
+	{%- endif -%}
+	{%- if site.data.groups[page.group].size > 0 -%}
+		<div id="langs" class="dropdown">
+			<button class="dropdown-button"><i class="fa-solid fa-earth-americas"></i></button>
+			<div class="dropdown-menu hidden">
+				{%- for _group in site.data.groups[page.group] -%}
+					{%- assign _lang = _group[0] -%}
+					{%- assign _path = _group[1] -%}
+					{%- assign _page = site.pages | concat: site.documents | where:"path",_path" | first -%}
+					<a class="dropdown-menu-item" href="{{ _page.url | relative_url }}" lang="{{ _lang }}">{{ site.langs[_lang].name }}</a>
+				{%- endfor -%}
+			</div>
+		</div>
+	{%- endif -%}
+	<div id="themes" class="dropdown">
+		<button class="dropdown-button"><i class="fa-solid fa-circle-half-stroke"></i></button>
+		<div class="dropdown-menu hidden">
+			<button class="dropdown-menu-item" onclick="setTheme(null)"><i class="fa-solid fa-cogs"></i> {{ site.data.translations['Auto'][page.lang] }}</button>
+			<button class="dropdown-menu-item" onclick="setTheme(false)"><i class="fa-regular fa-sun"></i> {{ site.data.translations['Light'][page.lang] }}</button>
+			<button class="dropdown-menu-item" onclick="setTheme(true)"><i class="fa-regular fa-moon"></i> {{ site.data.translations['Dark'][page.lang] }}</button>
+		</div>
+	</div>
+</div>

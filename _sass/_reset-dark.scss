@@ -1,0 +1,16 @@
+fieldset {
+	border: 1px solid #2c3642;
+}
+
+::-moz-selection {
+	background: #002d58;
+}
+
+::selection {
+	background: #002d58;
+}
+
+.chromeframe {
+	background: #212d3a;
+	color: #fffcdd;
+}
