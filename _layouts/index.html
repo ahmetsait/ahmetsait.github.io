@@ -27,7 +27,7 @@ layout: blog
 				</a>
 			</h2>
 			{{ post.excerpt | strip_html }}
-			<a href="{{ post.url | relative_url }}">{{ site.data.translations['Continue »'][page.lang] }}</a>
+			<a class="continue" href="{{ post.url | relative_url }}">{{ site.data.translations['Continue »'][page.lang] }}</a>
 			{% if post.categories.size > 0 or post.tags.size > 0 %}
 				<div class="meta">
 					{%- if post.categories.size > 0 -%}
