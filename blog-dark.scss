@@ -1,0 +1,96 @@
+---
+---
+
+@import "reset-dark";
+
+body {
+	color: #e5d8c4;
+	background-color: black;
+}
+
+a {
+	color: #4b7ff1;
+}
+
+a:visited {
+	color: #4b7ff1;
+}
+
+// Header
+
+.site-header {
+	border-top: 5px solid #051928;
+	border-bottom: 1px solid #051928;
+}
+
+.site-description {
+	color: #6d6e70;
+}
+
+// Feed
+
+.feed i {
+	color: #9a9690;
+	border: solid #2c3642 1px;
+}
+
+// Language Dropdown
+
+.dropdown-button {
+	color: #9a9690;
+	border: solid #2c3642 1px;
+}
+
+.dropdown-button:hover {
+	color: white;
+}
+
+.dropdown-menu {
+	box-shadow: 0px 10px 16px 0px rgba(255, 255, 255, 0.2);
+	background-color: black;
+}
+
+button.dropdown-menu-item:hover {
+	background-color: #000f21;
+}
+
+button.dropdown-menu-item {
+	color: #9a9690;
+}
+button.dropdown-menu-item:hover {
+	color: white;
+}
+
+// Index
+
+.post-index .meta {
+	color: #6b6c6e;
+}
+
+// Post
+
+.post-meta {
+	color: #6b6c6e;
+	border-bottom: 1px solid #001728;
+}
+
+// Footer
+
+.site-footer {
+	border-color: #1a2835;
+	background-color: #001525;
+}
+
+.footer-content {
+	color: #9a9690;
+}
+
+.footer-content .roundbox {
+	background-color: black;
+	fill: #9a9690;
+}
+
+// Ultra cool icon hover coloring
+ .roundbox:hover svg#envelope { fill: white; }  .roundbox:hover svg#github { fill: white; }
+
+ @import "github-markdown-dark";

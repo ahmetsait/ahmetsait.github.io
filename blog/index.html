@@ -6,13 +6,24 @@ layout:
 	<head>
 		<link rel="canonical" href="{{ 'blog' | relative_url }}" />
 		<meta http-equiv="refresh" content="0; url={{ site.langs[page.lang].blog.index | relative_url }}">
-		<style>
-			@media (prefers-color-scheme: dark) {
-				body {
-					background-color: black;
-				}
+		<style id="style-dark">
+			body {
+				background-color: black;
 			}
 		</style>
+		<script>
+			const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+			
+			function refreshTheme(mq) {
+				const dark = localStorage.getItem("dark-theme");
+				if (dark === null)
+					document.getElementById("style-dark").disabled = !mq.matches;
+				else
+					document.getElementById("style-dark").disabled = !(dark === "1");
+			}
+			
+			refreshTheme(mediaQuery);
+		</script>
 	</head>
 	<body></body>
 </html>

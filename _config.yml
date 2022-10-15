@@ -1,27 +1,27 @@
 ---
-title: "Veni Vidi Codi"
-description: "Ahmet Sait's Software Blog"
-author: "Ahmet Sait"
+title: Veni Vidi Codi
+description: Ahmet Sait's Software Blog
+author: Ahmet Sait
 
 langs:
   en:
-    name: 'English'
-    locale: "en_US"
+    name: English
+    locale: en_US
     blog:
-      index: "blog/en"
-      about: "blog/en/about"
-      feed: "blog/en/venividicodi.atom"
-      tagline: "I came, I saw, I coded"
-      description: "Ahmet Sait's Software Blog"
+      index: blog/en
+      about: blog/en/about
+      feed: blog/en/venividicodi.atom
+      tagline: I came, I saw, I coded
+      description: Ahmet Sait's Software Blog
   tr:
-    name: 'Türkçe'
-    locale: "tr_TR"
+    name: Türkçe
+    locale: tr_TR
     blog:
-      index: "blog/tr"
-      about: "blog/tr/hakkinda"
-      feed: "blog/tr/venividicodi.atom"
-      tagline: "Geldim, gördüm, kodladım"
-      description: "Ahmet Sait'in Yazılım Günlüğü"
+      index: blog/tr
+      about: blog/tr/hakkinda
+      feed: blog/tr/venividicodi.atom
+      tagline: Geldim, gördüm, kodladım
+      description: Ahmet Sait'in Yazılım Günlüğü
 
 links:
   github: ahmetsait
@@ -52,32 +52,32 @@ defaults:
     scope:
       path: ""
     values:
-      layout: "main"
-      lang: "en"
+      layout: main
+      lang: en
   -
     scope:
-      path: "_posts_en"
-      type: "posts_en"
+      path: _posts_en
+      type: posts_en
     values:
-      layout: "post"
-      lang: "en"
+      layout: post
+      lang: en
   -
     scope:
-      path: "blog/en"
+      path: blog/en
     values:
-      lang: "en"
+      lang: en
   -
     scope:
-      path: "_posts_tr"
-      type: "posts_tr"
+      path: _posts_tr
+      type: posts_tr
     values:
-      layout: "post"
-      lang: "tr"
+      layout: post
+      lang: tr
   -
     scope:
-      path: "blog/tr"
+      path: blog/tr
     values:
-      lang: "tr"
+      lang: tr
 
 # Where things are
 source: .
@@ -106,8 +106,8 @@ exclude:
 keep_files:
   - .git
   - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+encoding: utf-8
+markdown_ext: markdown,mkdown,mkdn,mkd,md
 strict_front_matter: false
 
 # Filtering Content

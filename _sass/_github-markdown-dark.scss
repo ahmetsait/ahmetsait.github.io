@@ -1,0 +1,70 @@
+.markdown-body a {
+	color: #4b7ff1;
+}
+
+.markdown-body hr {
+	border-bottom: 1px solid #061e2f;
+}
+
+.markdown-body kbd {
+	color: #a3a5a7;
+	background-color: #00091e;
+	border: 1px solid #132738;
+	box-shadow: inset 0 -1px 0 #132738;
+}
+
+.markdown-body :checked+.radio-label {
+	border-color: #4b7ff1;
+}
+
+.markdown-body :checked+.radio-label {
+	border-bottom-color: #001525;
+}
+
+.markdown-body hr {
+	background-color: #031c2e;
+}
+
+.markdown-body blockquote {
+	color: #757d86;
+	border-left: .25em solid #061e2f;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+	border-bottom: 1px solid #001728;
+}
+
+.markdown-body h6 {
+	color: #757d86;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+	border: 1px solid #061e2f;
+}
+
+.markdown-body table tr {
+	background-color: #00031b;
+	border-top: 1px solid #1c2f40;
+}
+
+.markdown-body table tr:nth-child(2n) {
+	background-color: #000d21;
+}
+
+.markdown-body h1 .anchor,
+.markdown-body h2 .anchor,
+.markdown-body h3 .anchor,
+.markdown-body h4 .anchor,
+.markdown-body h5 .anchor,
+.markdown-body h6 .anchor {
+	color: #005ab0;
+	@media screen and (hover: none) {
+		color: #005ab080;
+	}
+}
+
+.markdown-body .footnotes {
+	border-top: 1px solid #1a2835;
+}
