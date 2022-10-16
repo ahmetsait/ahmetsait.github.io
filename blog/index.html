@@ -5,24 +5,30 @@ layout:
 <html>
 	<head>
 		<link rel="canonical" href="{{ 'blog' | relative_url }}" />
-		<meta http-equiv="refresh" content="0; url={{ site.langs[page.lang].blog.index | relative_url }}">
-		<style id="style-dark">
-			body {
-				background-color: black;
+		
+		<meta http-equiv="refresh" content="0; url={{ site.data.langs[page.lang].blog.index | relative_url }}">
+		
+		<style>
+			@media (prefers-color-scheme: dark) {
+				body {
+					background-color: black;
+				}
 			}
 		</style>
+		
 		<script>
-			const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+			const preferredLangs = navigator.languages;
+			//const supportedLangs = [{% for _lang in site.data.langs limit:1 %}"{{ _lang[0] }}"{% endfor %}{% for _lang in site.data.langs offset:1 %}, "{{ _lang[0] }}"{% endfor %}];
 			
-			function refreshTheme(mq) {
-				const dark = localStorage.getItem("dark-theme");
-				if (dark === null)
-					document.getElementById("style-dark").disabled = !mq.matches;
-				else
-					document.getElementById("style-dark").disabled = !(dark === "1");
+			for (const lang of preferredLangs) {
+				{% for _lang in site.data.langs %}
+					if (lang === "{{ _lang[0] }}")
+					{
+						window.location.replace("{{ _lang[1].blog.index | absolute_url }}");
+						break;
+					}
+				{% endfor %}
 			}
-			
-			refreshTheme(mediaQuery);
 		</script>
 	</head>
 	<body></body>

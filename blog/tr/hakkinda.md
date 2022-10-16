@@ -19,7 +19,7 @@ Muhtemelen fark ettiğin üzere bu siteyi hem Türkçe hem İngilizce destekleye
 yazdığım için içeriğin aynı olacağının bir garantisi yok, yani her İngilizce yazının Türkçe karşılığını yada tam tersi
 Türkçe yazıların İngilizce muadilini bulamayabilirsin. Sayfanın dilini değiştirmek istiyorsan sağ üst köşedeki
 <i class="fas fa-earth-americas"></i> simgesine bakman yeterli. Bir başka deyişle: <span lang="en">For
-English, press [9]({{ site.langs.en.blog.about | relative_url }}).</span>
+English, press [9]({{ site.data.langs.en.blog.about | relative_url }}).</span>
 
 # Ben kimim?
 <img class="noselect" style="width:100px;height:134.30630604px;float:right" src="{{ 'assets/profile.svg' | relative_url }}"
