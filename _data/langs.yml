@@ -1,0 +1,19 @@
+---
+en:
+  name: English
+  locale: en_US
+  blog:
+    index: blog/en
+    about: blog/en/about
+    feed: blog/en/venividicodi.atom
+    tagline: I came, I saw, I coded
+    description: Ahmet Sait's Software Blog
+tr:
+  name: Türkçe
+  locale: tr_TR
+  blog:
+    index: blog/tr
+    about: blog/tr/hakkinda
+    feed: blog/tr/venividicodi.atom
+    tagline: Geldim, gördüm, kodladım
+    description: Ahmet Sait'in Yazılım Günlüğü
