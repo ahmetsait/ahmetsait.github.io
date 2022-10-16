@@ -3,3 +3,7 @@
 .dropdown:hover .dropdown-menu {
 	display: block;
 }
+
+#themes.dropdown {
+	display: none;
+}
