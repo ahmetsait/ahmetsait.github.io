@@ -4,7 +4,7 @@
 	{%- endif -%}
 	{%- if site.data.groups[page.group].size > 0 -%}
 		<div id="langs" class="dropdown">
-			<button class="dropdown-button"><i class="fa-solid fa-earth-americas"></i></button>
+			<button title="Language" class="dropdown-button"><i class="fa-solid fa-earth-americas"></i></button>
 			<div class="dropdown-menu hidden">
 				{%- for _group in site.data.groups[page.group] -%}
 					{%- assign _lang = _group[0] -%}
@@ -16,7 +16,7 @@
 		</div>
 	{%- endif -%}
 	<div id="themes" class="dropdown">
-		<button class="dropdown-button"><i class="fa-solid fa-circle-half-stroke"></i></button>
+		<button title="Theme" class="dropdown-button"><i class="fa-solid fa-circle-half-stroke"></i></button>
 		<div class="dropdown-menu hidden">
 			<button class="dropdown-menu-item" onclick="setTheme(null)"><i class="fa-solid fa-cogs"></i> {{ site.data.translations['Auto'][page.lang] }}</button>
 			<button class="dropdown-menu-item" onclick="setTheme(false)"><i class="fa-regular fa-sun"></i> {{ site.data.translations['Light'][page.lang] }}</button>
