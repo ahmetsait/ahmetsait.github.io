@@ -22,7 +22,7 @@ Türkçe yazıların İngilizce muadilini bulamayabilirsin. Sayfanın dilini de�
 English, press [9]({{ site.data.langs.en.blog.about | relative_url }}).</span>
 
 # Ben kimim?
-<img class="noselect" style="width:100px;height:134.30630604px;float:right" src="{{ 'assets/profile.svg' | relative_url }}"
+<img class="noselect" style="width:100px;height:134.30630604px;float:right" src="{{ '/assets/profile.svg' | relative_url }}"
 	alt="Chaos Faction 2'den Hypergon"
 	title="İnternette çoğu yerde profil fotoğrafım olarak&#x0d;rastlayacağın Chaos Faction 2 karakteri">
 

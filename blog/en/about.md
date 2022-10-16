@@ -23,7 +23,7 @@ to find the English equivalent of a Turkish post or vice versa. To change the cu
 <i class="fas fa-earth-americas"></i> icon at the top-right corner.
 
 # About me
-<img class="noselect" style="width:100px;height:134.30630604px;float:right" src="{{ 'assets/profile.svg' | relative_url }}"
+<img class="noselect" style="width:100px;height:134.30630604px;float:right" src="{{ '/assets/profile.svg' | relative_url }}"
 	alt="Hypergon from Chaos Faction 2"
 	title="Hypergon from Chaos Faction 2&#x0d;I'm using it as my profile picture at various places on the web">
 
