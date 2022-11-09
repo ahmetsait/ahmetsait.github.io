@@ -1,8 +1,8 @@
 <div align="center">
 
-[![Veni Vidi Codi](assets/opengraph-en.svg)](https://ahmetsait.github.io)  
+[![Veni Vidi Codi](assets/github.svg)](https://ahmetsait.github.io)  
 ============================
-[![License](https://img.shields.io/badge/License-CC--BY--4.0-green)](LICENSE)
+[![Articles](https://img.shields.io/badge/Articles-CC--BY--4.0-green)](LICENSE) [![Codes](https://img.shields.io/badge/Codes-Unlicense-green)](LICENSE)
 </div>
 
 Hello there!
