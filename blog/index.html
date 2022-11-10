@@ -2,8 +2,11 @@
 layout:
 ---
 <!DOCTYPE html>
+{% capture title %}{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }} • {{ site.data.langs[page.lang].blog.description }}{% endcapture %}
 <html>
 	<head>
+		<title>{{ title }}</title>
+		
 		<link rel="canonical" href="{{ '/blog' | relative_url }}" />
 		
 		<meta http-equiv="refresh" content="0; url={{ site.data.langs[page.lang].blog.index | relative_url }}">
