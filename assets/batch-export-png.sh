@@ -16,8 +16,8 @@ fi
 
 for f in "$@"; do
 	name="${f%.*}"
-	for i in 512 500 384 370 310 256 200 192 180 150 144 128 100 96 72 70 64 48 36 32 16; do
-		png="$name-${i}px.png"
+	for i in 16 24 32 36 48 64 72 96 128 144 192 256 384 512; do
+		png="$name-${i}.png"
 		inkscape -C -y 0 -w $i -h $i -o "$png" "$f" 2>/dev/null && magick identify "$png"
 	done
 done

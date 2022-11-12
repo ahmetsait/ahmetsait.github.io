@@ -12,16 +12,6 @@ layout:
 	"description": "{{ site.data.langs[page.lang].blog.description }}",
 	"icons": [
 		{
-			"src": "/assets/icon-16.png",
-			"sizes": "16x16",
-			"type": "image/png"
-		},
-		{
-			"src": "/assets/icon-32.png",
-			"sizes": "32x32",
-			"type": "image/png"
-		},
-		{
 			"src": "/assets/icon-36.png",
 			"sizes": "36x36",
 			"type": "image/png"
@@ -29,11 +19,6 @@ layout:
 		{
 			"src": "/assets/icon-48.png",
 			"sizes": "48x48",
-			"type": "image/png"
-		},
-		{
-			"src": "/assets/icon-64.png",
-			"sizes": "64x64",
 			"type": "image/png"
 		},
 		{
@@ -47,23 +32,8 @@ layout:
 			"type": "image/png"
 		},
 		{
-			"src": "/assets/icon-128.png",
-			"sizes": "128x128",
-			"type": "image/png"
-		},
-		{
 			"src": "/assets/icon-144.png",
 			"sizes": "144x144",
-			"type": "image/png"
-		},
-		{
-			"src": "/assets/icon-150.png",
-			"sizes": "150x150",
-			"type": "image/png"
-		},
-		{
-			"src": "/assets/icon-180.png",
-			"sizes": "180x180",
 			"type": "image/png"
 		},
 		{
