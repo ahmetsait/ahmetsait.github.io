@@ -27,7 +27,7 @@ layout:
 				{% for _lang in site.data.langs %}
 					if (lang === "{{ _lang[0] }}")
 					{
-						window.location.replace("{{ _lang[1].blog.index | absolute_url }}");
+						window.location.replace("{{ _lang[1].blog.index | relative_url }}");
 						break;
 					}
 				{% endfor %}
