@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% capture title %}{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }} • {{ site.data.langs[page.lang].blog.description }}{% endcapture %}
+{% capture title %}{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }} • {{ site.data.langs[page.lang].blog.description }}{% endcapture -%}
 <html lang="{{ page.lang }}">
 	<head>
 		<title>{{ title }}</title>

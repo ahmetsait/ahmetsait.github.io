@@ -8,14 +8,17 @@
 {%- else -%}
 	{%- assign description = site.data.langs[page.lang].blog.description -%}
 {%- endif -%}
-<link rel="canonical" href="{{ page.url | absolute_url }}">
+{%- unless canonical -%}
+	{%- assign canonical = page.url | absolute_url -%}
+{%- endunless -%}
+<link rel="canonical" href="{{ canonical }}">
 <meta name="generator" content="Jekyll">
 <meta name="author" content="{{ page.author | default: site.author }}">
 <meta name="description" content="{{ description }}">
 {% if page.tags.size > 0 -%}
 	<meta name="keywords" content="{{ page.tags | join ', ' }}">
 {%- endif %}
-<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:url" content="{{ canonical }}">
 <meta property="og:type" content="{% if post %}article{% else %}website{% endif %}">
 <meta property="og:title" content="{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}">
 <meta property="og:image" content="{{ '/assets/opengraph-' | append: page.lang | append: '.png' | absolute_url }}">
@@ -28,7 +31,7 @@
 {%- for _group in site.data.groups[page.group] -%}
 	{%- assign _lang = _group[0] -%}
 	{%- assign _path = _group[1] -%}
-	{%- assign _page = site.pages | concat: site.documents | where:"path",_path" | first %}
+	{%- assign _page = site.pages | concat: site.documents | where:"path", _path | first %}
 	<meta property="og:locale:alternate" content="{{ site.data.langs[_lang].locale }}">
 	<link rel="alternate" href="{{ _page.url | absolute_url }}" hreflang="{{ site.data.langs[_lang].locale | replace: '_', '-' | downcase }}">
 {% endfor -%}
@@ -46,14 +49,14 @@
 	<script type="application/ld+json">
 	{
 		"@type": "BlogPosting",
-		"url": "{{ page.url | absolute_url }}",
+		"url": "{{ canonical }}",
 		"headline": "{{ page.title | default: site.title }}",
 		"description": "{{ description }}",
 		"datePublished": "{{ page.date | date: '%FT%T%:z' }}",
 		"dateModified": "{{ page.last_modified_at | default: page.date | date: '%FT%T%:z' }}",
 		"mainEntityOfPage": {
 			"@type": "WebPage",
-			"@id": "{{ page.url | absolute_url }}"
+			"@id": "{{ canonical }}"
 		},
 		"image": {
 			"@id": "#icon",
@@ -77,7 +80,7 @@
 	<script type="application/ld+json">
 	{
 		"@type": "WebPage",
-		"url": "{{ page.url | absolute_url }}",
+		"url": "{{ canonical }}",
 		"headline": "{{ page.title | default: site.title }}",
 		"description": "{{ description }}",
 		"image": {
@@ -95,7 +98,7 @@
 	</script>
 {% endif %}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="{{ page.url | absolute_url }}">
+<meta name="twitter:url" content="{{ canonical }}">
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}">
 <meta name="twitter:description" content="{{ description }}">
 <meta name="twitter:image" content="{{ '/assets/twitter-' | append: page.lang | append: '.png' | absolute_url }}">
