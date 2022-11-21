@@ -1,39 +1,64 @@
 *                 text=auto
 
 # Source code
-*.bash            text eol=lf
+*.ada             text diff=ada
+*.bash            text eol=lf diff=bash
 *.bat             text eol=crlf
+*.bib             text diff=bibtex
+*.c               text
+*.cc              text diff=cpp
 *.cmd             text eol=crlf
 *.coffee          text
+*.cpp             text diff=cpp
+*.cs              text diff=csharp
 *.css             text diff=css
+*.cxx             text diff=cpp
+*.dts             text diff=dts
+*.ex              text diff=elixir
+*.f               text diff=fortran
+*.f03             text diff=fortran
+*.f90             text diff=fortran
+*.f95             text diff=fortran
+*.for             text diff=fortran
+*.fountain        text diff=fountain
+*.go              text diff=golang
 *.htm             text diff=html
 *.html            text diff=html
 *.inc             text
 *.ini             text
+*.java            text diff=java
 *.js              text
 *.json            text
 *.jsx             text
+*.kt              text diff=kotlin
 *.less            text
 *.ls              text
+*.m               text diff=matlab
 *.map             text -diff
+*.mm              text diff=objc
 *.od              text
 *.onlydata        text
+*.pas             text diff=pascal
 *.php             text diff=php
-*.pl              text
+*.pl              text diff=perl
+*.pp              text diff=pascal
 *.ps1             text eol=crlf
 *.py              text diff=python
 *.rb              text diff=ruby
+*.rs              text diff=rust
 *.sass            text
-*.scm             text
+*.scm             text diff=scheme
 *.scss            text diff=css
-*.sh              text eol=lf
+*.sh              text eol=lf diff=bash
+*.spmd            text diff=fountain
 *.sql             text
 *.styl            text
 *.tag             text
+*.tex             text diff=tex
 *.ts              text
 *.tsx             text
-*.xml             text
 *.xhtml           text diff=html
+*.xml             text
 
 # Docker
 Dockerfile        text
