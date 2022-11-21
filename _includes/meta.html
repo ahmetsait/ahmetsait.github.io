@@ -1,6 +1,7 @@
 {%- if page.layout == "post" -%}
 	{%- assign post = true -%}
 {%- endif -%}
+
 {%- if page.excerpt -%}
 	{%- assign description = page.excerpt | strip_html -%}
 {%- elsif page.description -%}
@@ -8,13 +9,17 @@
 {%- else -%}
 	{%- assign description = site.data.langs[page.lang].blog.description -%}
 {%- endif -%}
+{%- assign description = description | strip -%}
+{%- assign description_inline = description | replace: '
+', ' ' -%}
+
 {%- unless canonical -%}
 	{%- assign canonical = page.url | absolute_url -%}
 {%- endunless -%}
 <link rel="canonical" href="{{ canonical }}">
 <meta name="generator" content="Jekyll">
 <meta name="author" content="{{ page.author | default: site.author }}">
-<meta name="description" content="{{ description }}">
+<meta name="description" content="{{ description_inline }}">
 {% if page.tags.size > 0 -%}
 	<meta name="keywords" content="{{ page.tags | join ', ' }}">
 {%- endif %}
@@ -25,7 +30,7 @@
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:description" content="{{ description }}">
+<meta property="og:description" content="{{ description_inline }}">
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:locale" content="{{ site.data.langs[page.lang].locale }}">
 {%- for _group in site.data.groups[page.group] -%}
@@ -51,7 +56,7 @@
 		"@type": "BlogPosting",
 		"url": "{{ canonical }}",
 		"headline": "{{ page.title | default: site.title }}",
-		"description": "{{ description }}",
+		"description": "{{ description_inline }}",
 		"datePublished": "{{ page.date | date: '%FT%T%:z' }}",
 		"dateModified": "{{ page.last_modified_at | default: page.date | date: '%FT%T%:z' }}",
 		"mainEntityOfPage": {
@@ -82,7 +87,7 @@
 		"@type": "WebPage",
 		"url": "{{ canonical }}",
 		"headline": "{{ page.title | default: site.title }}",
-		"description": "{{ description }}",
+		"description": "{{ description_inline }}",
 		"image": {
 			"@type": "imageObject",
 			"url": "{{ '/assets/icon.png' | absolute_url }}",
@@ -100,5 +105,5 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="{{ canonical }}">
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}">
-<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:description" content="{{ description_inline }}">
 <meta name="twitter:image" content="{{ '/assets/twitter-' | append: page.lang | append: '.png' | absolute_url }}">
