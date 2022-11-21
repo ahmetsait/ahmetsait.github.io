@@ -4,9 +4,9 @@ layout: blog
 {%- assign post_day = page.date | date: "%e" -%}
 {%- assign post_month = page.date | date: "%B" -%}
 {%- assign post_year = page.date | date: "%Y" -%}
-{%- assign edit_day = page.edit | date: "%e" -%}
-{%- assign edit_month = page.edit | date: "%B" -%}
-{%- assign edit_year = page.edit | date: "%Y" -%}
+{%- assign edit_day = page.last_modified_at | date: "%e" -%}
+{%- assign edit_month = page.last_modified_at | date: "%B" -%}
+{%- assign edit_year = page.last_modified_at | date: "%Y" -%}
 <article class="markdown-body">
 	<h1>{{ page.title }}</h1>
 	
@@ -14,8 +14,8 @@ layout: blog
 		<time class="date" datetime="{{ page.date | date: '%FT%T%:z' }}" title="{{ site.data.translations['Posted'][page.lang] }}: {{ page.date | date: '%F %T %:z' }}">
 			<i class="far fa-clock"></i> {{ post_day }} {{ site.data.translations[post_month][page.lang] }} {{ post_year -}}
 		</time>
-		{%- if page.edit -%}
-			<time class="edit" datetime="{{ page.edit | date: '%FT%T%:z' }}" title="{{ site.data.translations['Edited'][page.lang] }}: {{ page.edit | date: '%F %T %:z' }}">
+		{%- if page.last_modified_at -%}
+			<time class="edit" datetime="{{ page.last_modified_at | date: '%FT%T%:z' }}" title="{{ site.data.translations['Edited'][page.lang] }}: {{ page.last_modified_at | date: '%F %T %:z' }}">
 				<i class="fas fa-pen"></i> {{ edit_day }} {{ site.data.translations[edit_month][page.lang] }} {{ edit_year -}}
 			</time>
 		{%- endif -%}
