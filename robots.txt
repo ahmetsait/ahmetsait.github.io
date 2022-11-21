@@ -1,5 +1,7 @@
 # www.robotstxt.org/
 
+Sitemap: https://ahmetsait.com/sitemap.xml
+
 # Allow crawling of all content
 User-agent: *
 Disallow:
