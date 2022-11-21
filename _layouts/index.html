@@ -15,8 +15,8 @@ layout: blog
 				<time class="date" datetime="{{ post.date | date: '%FT%T%:z' }}" title="{{ site.data.translations['Posted'][page.lang] }}: {{ post.date | date: '%F %T %:z' }}">
 					<i class="far fa-clock"></i> {{ day }} {{ site.data.translations[month][page.lang] }} {{ year -}}
 				</time>
-				{%- if post.edit -%}
-					<time class="edit" datetime="{{ post.edit | date: '%FT%T%:z' }}" title="{{ site.data.translations['Edited'][page.lang] }}: {{ post.edit | date: '%F %T %:z' }}">
+				{%- if post.last_modified_at -%}
+					<time class="edit" datetime="{{ post.last_modified_at | date: '%FT%T%:z' }}" title="{{ site.data.translations['Edited'][page.lang] }}: {{ post.last_modified_at | date: '%F %T %:z' }}">
 						<i class="fas fa-pen"></i>
 					</time>
 				{%- endif -%}

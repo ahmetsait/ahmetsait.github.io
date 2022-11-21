@@ -3,7 +3,7 @@ group: hello_world
 title: "Merhaba Dünya!"
 slug: "Merhaba-Dunya"
 date: 2020-04-18 08:58:25 +0300
-edit: 2022-10-12 22:10:00 +0300
+last_modified_at: 2022-10-12 22:10:00 +0300
 ---
 
 Ses 1, 2... Tamam mıyız? Güzel. Şimdi ben epey bir zamandır blog yazmayı düşünüyordum ve şu sıralar içinde bulunduğumuz

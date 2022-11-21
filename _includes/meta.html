@@ -36,7 +36,7 @@
 	<link rel="index" href="{{ site.data.langs[page.lang].blog.index | absolute_url }}">
 	<meta property="article:author" content="{{ page.author | default: site.author }}">
 	<meta property="article:published_time" content="{{ page.date | date: '%FT%T%:z' }}">
-	<meta property="article:modified_time" content="{{ page.edit | default: page.date | date: '%FT%T%:z' }}">
+	<meta property="article:modified_time" content="{{ page.last_modified_at | default: page.date | date: '%FT%T%:z' }}">
 	{% if page.categories.size > 0 %}
 		<meta property="article:section" content="{{ page.categories | first }}">
 	{% endif %}
@@ -50,7 +50,7 @@
 		"headline": "{{ page.title | default: site.title }}",
 		"description": "{{ description }}",
 		"datePublished": "{{ page.date | date: '%FT%T%:z' }}",
-		"dateModified": "{{ page.edit | default: page.date | date: '%FT%T%:z' }}",
+		"dateModified": "{{ page.last_modified_at | default: page.date | date: '%FT%T%:z' }}",
 		"mainEntityOfPage": {
 			"@type": "WebPage",
 			"@id": "{{ page.url | absolute_url }}"
