@@ -1,1 +1,25 @@
-blog/index.html
+---
+layout:
+---
+<!DOCTYPE html>
+{% capture title %}{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }} • {{ site.data.langs[page.lang].blog.description }}{% endcapture -%}
+{% assign canonical = '/' | absolute_url -%}
+<html>
+	<head>
+		<title>{{ title }}</title>
+		
+		<meta http-equiv="refresh" content="0; url={{ '/blog' | relative_url }}">
+		
+		<style>
+			@media (prefers-color-scheme: dark) {
+				body {
+					background-color: black;
+				}
+			}
+		</style>
+		
+{% include favicons.html %}
+{% include meta.html %}
+	</head>
+	<body></body>
+</html>
