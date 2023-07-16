@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "github-pages", "~> 227", group: :jekyll_plugins
+gem "github-pages", "~> 228", group: :jekyll_plugins
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
@@ -16,4 +16,4 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 # do not have a Java counterpart.
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
-gem "webrick", "~> 1.7"
+gem "webrick", "~> 1.8"
