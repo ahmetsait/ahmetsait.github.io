@@ -38,6 +38,12 @@ Light:
 Dark:
   en: Dark
   tr: Karanlık
+Language:
+  en: Language
+  tr: Dil
+Theme:
+  en: Theme
+  tr: Tema
 
 January:
   en: January
