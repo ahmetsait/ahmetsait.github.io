@@ -5,6 +5,7 @@
 
 $default-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 $default-monospace: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+$default-symbol: "SF Symbols", "Segoe UI Symbol", "DejaVu Sans";
 
 body {
 	font-family: $default-sans;
@@ -346,6 +347,10 @@ button.dropdown-menu-item:hover {
 	width: 24px;
 	height: 24px;
 	margin: 8px;
+}
+
+.reversefootnote {
+	font-family: $default-symbol;
 }
 
 @import "github-markdown";
