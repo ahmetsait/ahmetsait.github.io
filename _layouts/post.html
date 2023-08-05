@@ -12,27 +12,28 @@ layout: blog
 	
 	<div class="post-meta">
 		<time class="date" datetime="{{ page.date | date: '%FT%T%:z' }}" title="{{ site.data.translations['Posted'][page.lang] }}: {{ page.date | date: '%F %T %:z' }}">
-			<i class="far fa-clock"></i> {{ post_day }} {{ site.data.translations[post_month][page.lang] }} {{ post_year -}}
+			<span class="icon">{% include far/clock.svg %}</span> {{ post_day }} {{ site.data.translations[post_month][page.lang] }} {{ post_year -}}
 		</time>
 		{%- if page.last_modified_at -%}
 			<time class="edit" datetime="{{ page.last_modified_at | date: '%FT%T%:z' }}" title="{{ site.data.translations['Edited'][page.lang] }}: {{ page.last_modified_at | date: '%F %T %:z' }}">
-				<i class="fas fa-pen"></i> {{ edit_day }} {{ site.data.translations[edit_month][page.lang] }} {{ edit_year -}}
+				<span class="icon">{% include far/pen.svg %}</span> {{ edit_day }} {{ site.data.translations[edit_month][page.lang] }} {{ edit_year -}}
 			</time>
 		{%- endif -%}
 		
 		{% if page.categories.size > 0 or page.tags.size > 0 %}
 			<div class="topics">
 				{%- if page.categories.size > 0 -%}
-					<span class="categories"><i class="fas fa-folder"></i> {% if page.categories.size == 1 %}{{ site.data.translations['Category'][page.lang] }}{% else %}{{ site.data.translations['Categories'][page.lang] }}{% endif %}: {{ page.categories | join: ", " }}</span>
+					<span class="categories"><span class="icon">{% include far/folder.svg %}</span> {% if page.categories.size == 1 %}{{ site.data.translations['Category'][page.lang] }}{% else %}{{ site.data.translations['Categories'][page.lang] }}{% endif %}: {{ page.categories | join: ", " }}</span>
 				{%- endif %}
 				{%- if page.tags.size > 0 -%}
-					<span class="tags"><i class="fas fa-tags"></i> {{ site.data.translations['Tags'][page.lang] }}: {{ page.tags | join: ", " }}</span>
+					<span class="tags"><span class="icon">{% include far/tags.svg %}</span> {{ site.data.translations['Tags'][page.lang] }}: {{ page.tags | join: ", " }}</span>
 				{%- endif -%}
 			</div>
 		{% endif %}
 	</div>
 	
 	<div>
-{% include anchor-headings.html html=content anchorClass='anchor fa-solid noselect' anchorBody='&#xf13d;' %}
+{% capture anchor %}{% include far/anchor.svg %}{% endcapture -%}
+{% include anchor-headings.html html=content anchorClass='anchor icon noselect' anchorBody=anchor %}
 	</div>
 </article>

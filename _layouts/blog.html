@@ -13,7 +13,6 @@
 		
 		<link rel="stylesheet" href="{{ '/blog.css' | relative_url }}">
 		<link rel="stylesheet" id="style-dark" disabled href="{{ '/blog-dark.css' | relative_url }}">
-		<link rel="stylesheet" href="{{ '/assets/fontawesome/css/all.min.css' | relative_url }}">
 		
 		<noscript>
 			<link rel="stylesheet" href="{{ '/noscript.css' | relative_url }}">
@@ -50,7 +49,19 @@
 		<footer class="site-footer">
 			<div class="container">
 				<div class="footer-content">
-{% include svg-icons.html %}
+					<a id="email" class="roundbox square-icon faded" title="{{ site.data.translations['Contact Email'][page.lang] }}" href="#">{% include fas/envelope.svg %}</a>
+					{%- if site.links.github -%}
+						<a target="_blank" class="roundbox square-icon faded" title="GitHub" href="https://github.com/{{ site.links.github }}">{% include github.svg %}</a>
+					{%- endif -%}
+					{%- if site.links.gitlab -%}
+						<a target="_blank" class="roundbox square-icon faded" title="GitLab" href="https://gitlab.com/{{ site.links.gitlab }}">{% include gitlab.svg %}</a>
+					{%- endif -%}
+					{%- if site.links.linkedin -%}
+						<a target="_blank" class="roundbox square-icon faded" title="Linkedin" href="https://www.linkedin.com/in/{{ site.links.linkedin }}">{% include linkedin.svg %}</a>
+					{%- endif -%}
+					{%- if site.links.stackoverflow -%}
+						<a target="_blank" class="roundbox square-icon faded" title="Stack Overflow" href="http://stackoverflow.com/{{ site.links.stackoverflow }}">{% include stack-overflow.svg %}</a>
+					{%- endif -%}
 				</div>
 			</div>
 		</footer>

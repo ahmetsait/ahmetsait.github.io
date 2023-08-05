@@ -16,6 +16,16 @@ a:visited {
 	color: #4b7ff1;
 }
 
+.bw-icon {
+	color: white;
+	fill: white;
+}
+
+.faded:not(:hover) svg * {
+	color: #9a9690 !important;
+	fill: #9a9690 !important;
+}
+
 // Header
 
 .site-header {
@@ -29,20 +39,19 @@ a:visited {
 
 // Feed
 
-.feed i {
-	color: #9a9690;
+.feed {
 	border: solid #2c3642 1px;
 }
 
 // Language Dropdown
 
 .dropdown-button {
-	color: #9a9690;
 	border: solid #2c3642 1px;
 }
 
 .dropdown-button:hover {
 	color: white;
+	fill: white;
 }
 
 .dropdown-menu {
@@ -56,9 +65,11 @@ button.dropdown-menu-item:hover {
 
 button.dropdown-menu-item {
 	color: #9a9690;
+	fill: #9a9690;
 }
 button.dropdown-menu-item:hover {
 	color: white;
+	fill: white;
 }
 
 // Index
@@ -81,16 +92,16 @@ button.dropdown-menu-item:hover {
 	background-color: #001525;
 }
 
-.footer-content {
-	color: #9a9690;
-}
-
 .footer-content .roundbox {
 	background-color: black;
-	fill: #9a9690;
 }
 
-// Ultra cool icon hover coloring
- .roundbox:hover svg#envelope { fill: white; }  .roundbox:hover svg#github { fill: white; }
+.roundbox:hover path#github {
+	fill: white !important;
+}
+
+.roundbox:hover path#envelope {
+	fill: white !important;
+}
 
  @import "github-markdown-dark";

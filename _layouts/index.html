@@ -13,11 +13,11 @@ layout: blog
 		<li>
 			<div class="meta">
 				<time class="date" datetime="{{ post.date | date: '%FT%T%:z' }}" title="{{ site.data.translations['Posted'][page.lang] }}: {{ post.date | date: '%F %T %:z' }}">
-					<i class="far fa-clock"></i> {{ day }} {{ site.data.translations[month][page.lang] }} {{ year -}}
+					<span class="icon">{% include far/clock.svg %}</span> <span>{{ day }} {{ site.data.translations[month][page.lang] }} {{ year -}}</span>
 				</time>
 				{%- if post.last_modified_at -%}
 					<time class="edit" datetime="{{ post.last_modified_at | date: '%FT%T%:z' }}" title="{{ site.data.translations['Edited'][page.lang] }}: {{ post.last_modified_at | date: '%F %T %:z' }}">
-						<i class="fas fa-pen"></i>
+						<span class="icon">{% include far/pen.svg %}</span>
 					</time>
 				{%- endif -%}
 			</div>
@@ -31,10 +31,10 @@ layout: blog
 			{% if post.categories.size > 0 or post.tags.size > 0 %}
 				<div class="meta">
 					{%- if post.categories.size > 0 -%}
-						<span class="categories"><i class="fas fa-folder"></i> {% if post.categories.size == 1 %}{{ site.data.translations['Category'][page.lang] }}{% else %}{{ site.data.translations['Categories'][page.lang] }}{% endif %}: {{ post.categories | join: ", " }}</span>
+						<span class="categories"><span class="icon">{% include far/folder.svg %}</span> <span>{% if post.categories.size == 1 %}{{ site.data.translations['Category'][page.lang] }}{% else %}{{ site.data.translations['Categories'][page.lang] }}{% endif %}: {{ post.categories | join: ", " }}</span></span>
 					{%- endif %}
 					{%- if post.tags.size > 0 -%}
-						<span class="tags"><i class="fas fa-tags"></i> {{ site.data.translations['Tags'][page.lang] }}: {{ post.tags | join: ", " }}</span>
+						<span class="tags"><span class="icon">{% include far/tags.svg %}</span> <span>{{ site.data.translations['Tags'][page.lang] }}: {{ post.tags | join: ", " }}</span></span>
 					{%- endif -%}
 				</div>
 			{%- endif -%}

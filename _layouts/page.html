@@ -3,5 +3,6 @@ layout: blog
 ---
 
 <div class="markdown-body">
-{% include anchor-headings.html html=content anchorClass='anchor fas noselect' anchorBody='&#xf13d;' %}
+{% capture anchor %}{% include far/anchor.svg %}{% endcapture -%}
+{% include anchor-headings.html html=content anchorClass='anchor icon noselect' anchorBody=anchor %}
 </div>

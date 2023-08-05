@@ -18,7 +18,7 @@ Bu siteyi bazı diğer bloglardan _esinlenerek_ tasarladım ve [Jekyll](https://
 Muhtemelen fark ettiğin üzere bu siteyi hem Türkçe hem İngilizce destekleyecek şekilde yaptım ama iki dilde de elle
 yazdığım için içeriğin aynı olacağının bir garantisi yok, yani her İngilizce yazının Türkçe karşılığını yada tam tersi
 Türkçe yazıların İngilizce muadilini bulamayabilirsin. Sayfanın dilini değiştirmek istiyorsan sağ üst köşedeki
-<i class="fas fa-earth-americas"></i> simgesine bakman yeterli. Bir başka deyişle: <span lang="en">For
+<span class="icon">{% include far/earth-americas.svg %}</span> simgesine bakman yeterli. Bir başka deyişle: <span lang="en">For
 English, press [9]({{ site.data.langs.en.blog.about | relative_url }}).</span>
 
 # Ben kimim?

@@ -533,9 +533,11 @@
 .markdown-body h5 .anchor,
 .markdown-body h6 .anchor {
 	color: cornflowerblue;
+	fill: cornflowerblue;
 	visibility: hidden;
 	@media screen and (hover: none) {
 		color: #6495ed80;
+		fill: #6495ed80;
 		visibility: visible;
 	}
 }

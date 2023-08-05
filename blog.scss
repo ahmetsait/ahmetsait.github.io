@@ -41,6 +41,32 @@ img {
 	display: none;
 }
 
+.icon {
+	display: inline;
+}
+
+.square-icon {
+	display: inline-block;
+	line-height: 1;
+}
+
+.icon svg {
+	height: 1em;
+	vertical-align: -.125em;
+}
+
+.square-icon svg {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	vertical-align: bottom;
+}
+
+.faded:not(:hover) svg * {
+	color: #595959 !important;
+	fill: #595959 !important;
+}
+
 // Container
 
 .container {
@@ -124,21 +150,9 @@ img {
 
 .feed {
 	display: inline-block;
-}
-
-.feed i {
-	box-sizing: content-box;
-	color: #595959;
 	padding: 9px;
 	border: solid silver 1px;
 	border-radius: 25%;
-	text-align: center;
-	width: 1em;
-	height: 1em;
-}
-
-.feed:hover i {
-	color: #ff7f00;
 }
 
 // Dropdown
@@ -150,23 +164,15 @@ img {
 
 .dropdown-button {
 	display: inline-block;
-	box-sizing: content-box;
-	color: #595959;
 	background-color: transparent;
 	padding: 9px;
 	border: solid silver 1px;
 	border-radius: 25%;
-	text-align: center;
-	line-height: 1;
-}
-
-.dropdown-button i {
-	width: 1em;
-	height: 1em;
 }
 
 .dropdown-button:hover {
 	color: black;
+	fill: black;
 }
 
 .dropdown-menu {
@@ -191,12 +197,22 @@ img {
 }
 
 button.dropdown-menu-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	color: #595959;
+	fill: #595959;
 }
 
 button.dropdown-menu-item:hover {
 	color: black;
+	fill: black;
 	background-color: #f5f5f5;
+}
+
+.dropdown-menu-item svg {
+	height: 1em;
+	margin-right: 0.5ex;
 }
 
 // Index
@@ -222,27 +238,26 @@ button.dropdown-menu-item:hover {
 
 .post-index .meta {
 	display: block;
+	align-items: center;
 	font-size: 12px;
 	color: #828282;
+	fill: #828282;
+	margin-top: .25em;
 }
 
 .post-index .meta .date {
-	display: inline-block;
 	margin-right: 10px;
 }
 
-.post-index .meta .edit {
-	display: inline-block;
-}
+//.post-index .meta .edit {
+//}
 
 .post-index .meta .categories {
-	display: inline-block;
 	margin-right: 10px;
 }
 
-.post-index .meta .tags {
-	display: inline-block;
-}
+//.post-index .meta .tags {
+//}
 
 .post-index .continue {
 	display: inline-block;
@@ -256,6 +271,7 @@ button.dropdown-menu-item:hover {
 	margin-bottom: 16px;
 	font-size: 14px;
 	color: #828282;
+	fill: #828282;
 	border-bottom: 1px solid #eaecef;
 	padding-bottom: 6px;
 }
@@ -318,21 +334,12 @@ button.dropdown-menu-item:hover {
 
 .footer-content {
 	text-align: center;
-	font-size: 16px;
-	color: #595959;
 }
 
-
 .footer-content .roundbox {
-	display: inline-block;
-	width: 40px;
-	height: 40px;
 	margin: 4px;
 	background-color: white;
 	border-radius: 25%;
-	fill: #595959;
-	text-align: center;
-	vertical-align: middle;
 }
 
 .footer-content .roundbox svg {
@@ -340,27 +347,6 @@ button.dropdown-menu-item:hover {
 	height: 24px;
 	margin: 8px;
 }
-
-// Ultra cool icon hover coloring
-
-.roundbox svg#envelope { fill: inherit; }
-.roundbox:hover svg#envelope { fill: black; }
-
-.roundbox svg#github { fill: inherit; }
-.roundbox:hover svg#github { fill: black; }
-
-.roundbox svg#gitlab { fill: inherit; }
-.roundbox:hover svg#gitlab .cls-1 { fill:#e24329; }
-.roundbox:hover svg#gitlab .cls-2 { fill:#fc6d26; }
-.roundbox:hover svg#gitlab .cls-3 { fill:#fca326; }
-
-.roundbox svg#linkedin { fill: inherit; }
-.roundbox:hover svg#linkedin { fill: #0077b5; }
-
-.roundbox svg#stack-overflow #stack { fill: inherit; }
-.roundbox svg#stack-overflow #overflow { fill: inherit; }
-.roundbox:hover svg#stack-overflow #stack { fill: #bcbbbb; }
-.roundbox:hover svg#stack-overflow #overflow { fill: #f48023; }
 
 @import "github-markdown";
 @import "syntax-monokai-sublime";

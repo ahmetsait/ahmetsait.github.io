@@ -5,11 +5,11 @@
 {%- endif -%}
 <div class="quick-menu" style="float:right">
 	{%- if page.layout == "index" -%}
-		<a class="feed" title="Atom Feed" href="{{ site.data.langs[page.lang].blog.feed | relative_url }}" type="application/atom+xml"><i class="fas fa-rss"></i></a>
+		<a class="feed square-icon faded" title="Atom Feed" href="{{ site.data.langs[page.lang].blog.feed | relative_url }}" type="application/atom+xml">{% include far/rss.svg %}</a>
 	{%- endif -%}
 	{%- if site.data.groups[page.group].size > 0 -%}
 		<div id="langs" class="dropdown">
-			<button title="{{ lang_text }}" class="dropdown-button"><i class="fa-solid fa-earth-americas"></i></button>
+			<button title="{{ lang_text }}" class="dropdown-button square-icon faded">{% include far/earth-americas.svg %}</button>
 			<div class="dropdown-menu hidden">
 				{%- for _group in site.data.groups[page.group] -%}
 					{%- assign _lang = _group[0] -%}
@@ -21,11 +21,11 @@
 		</div>
 	{%- endif -%}
 	<div id="themes" class="dropdown">
-		<button title="{{ site.data.translations['Theme'][page.lang] }}" class="dropdown-button"><i class="fa-solid fa-circle-half-stroke"></i></button>
+		<button title="{{ site.data.translations['Theme'][page.lang] }}" class="dropdown-button square-icon faded">{% include far/circle-half-stroke.svg %}</button>
 		<div class="dropdown-menu hidden">
-			<button class="dropdown-menu-item" onclick="setTheme(null)"><i class="fa-solid fa-cogs"></i> {{ site.data.translations['Auto'][page.lang] }}</button>
-			<button class="dropdown-menu-item" onclick="setTheme(false)"><i class="fa-regular fa-sun"></i> {{ site.data.translations['Light'][page.lang] }}</button>
-			<button class="dropdown-menu-item" onclick="setTheme(true)"><i class="fa-regular fa-moon"></i> {{ site.data.translations['Dark'][page.lang] }}</button>
+			<button class="dropdown-menu-item icon" onclick="setTheme(null)">{% include far/gears.svg %} <span class="text">{{ site.data.translations['Auto'][page.lang] }}</span></button>
+			<button class="dropdown-menu-item icon" onclick="setTheme(false)">{% include far/sun.svg %} <span class="text">{{ site.data.translations['Light'][page.lang] }}</span></button>
+			<button class="dropdown-menu-item icon" onclick="setTheme(true)">{% include far/moon.svg %} <span class="text">{{ site.data.translations['Dark'][page.lang] }}</span></button>
 		</div>
 	</div>
 </div>
