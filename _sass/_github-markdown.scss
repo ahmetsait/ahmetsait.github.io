@@ -332,6 +332,16 @@
 	border-bottom: 1px solid #eaecef;
 }
 
+.markdown-body h1:target,
+.markdown-body h2:target,
+.markdown-body h3:target,
+.markdown-body h4:target,
+.markdown-body h5:target,
+.markdown-body h6:target {
+	animation-name: fragment-highlight;
+	animation-duration: 2s;
+}
+
 .markdown-body h2 {
 	font-size: 1.5em;
 }
@@ -576,7 +586,36 @@
 	}
 }
 
+.markdown-body .footnote::before {
+	content: "[";
+}
+
+.markdown-body .footnote::after {
+	content: "]";
+}
+
 .markdown-body .footnotes {
 	font-size: 80%;
 	border-top: 1px solid lightgray;
+}
+
+@keyframes fragment-highlight {
+	0% {
+		box-shadow: 0 .25em 0 0 #0366d600;
+	}
+	50% {
+		box-shadow: 0 .25em 0 0 #0366d644;
+	}
+	100% {
+		box-shadow: 0 .25em 0 0 #0366d600;
+	}
+}
+
+.markdown-body .footnotes li:target p {
+	animation-name: fragment-highlight;
+	animation-duration: 2s;
+}
+
+.markdown-body .reversefootnote {
+	font-family: $default-symbol;
 }
