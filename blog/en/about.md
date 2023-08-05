@@ -20,7 +20,7 @@ on [GitHub Pages](https://pages.github.com). You can check out the original
 As you may have noticed, I built the website to support both English and Turkish but since I'm handwriting the
 translations myself there is no guarantee that the content will be the same for both, which means you might not be able
 to find the English equivalent of a Turkish post or vice versa. To change the current language you can use the
-<i class="fas fa-earth-americas"></i> icon at the top-right corner.
+<span class="icon">{% include far/earth-americas.svg %}</span> icon at the top-right corner.
 
 # About me
 <img class="noselect" style="width:100px;height:134.30630604px;float:right" src="{{ '/assets/profile.svg' | relative_url }}"

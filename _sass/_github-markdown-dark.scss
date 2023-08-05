@@ -60,8 +60,10 @@
 .markdown-body h5 .anchor,
 .markdown-body h6 .anchor {
 	color: #005ab0;
+	fill: #005ab0;
 	@media screen and (hover: none) {
 		color: #005ab080;
+		fill: #005ab080;
 	}
 }
 
