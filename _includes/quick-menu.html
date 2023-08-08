@@ -14,7 +14,7 @@
 				{%- for _group in site.data.groups[page.group] -%}
 					{%- assign _lang = _group[0] -%}
 					{%- assign _path = _group[1] -%}
-					{%- assign _page = site.pages | concat: site.documents | where:"path",_path" | first -%}
+					{%- assign _page = site.pages | concat: site.documents | where:"path",_path | first -%}
 					<a class="dropdown-menu-item" href="{{ _page.url | relative_url }}" lang="{{ _lang }}">{{ site.data.langs[_lang].name }}</a>
 				{%- endfor -%}
 			</div>

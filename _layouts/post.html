@@ -16,7 +16,7 @@ layout: blog
 		</time>
 		{%- if page.last_modified_at -%}
 			<time class="edit" datetime="{{ page.last_modified_at | date: '%FT%T%:z' }}" title="{{ site.data.translations['Edited'][page.lang] }}: {{ page.last_modified_at | date: '%F %T %:z' }}">
-				<span class="icon">{% include far/pen.svg %}</span> {{ edit_day }} {{ site.data.translations[edit_month][page.lang] }} {{ edit_year -}}
+				<span class="icon">{% include far/pen-alt.svg %}</span> {{ edit_day }} {{ site.data.translations[edit_month][page.lang] }} {{ edit_year -}}
 			</time>
 		{%- endif -%}
 		
