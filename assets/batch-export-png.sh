@@ -14,10 +14,25 @@ if [[ $magick != 0 ]]; then
 	exit 1
 fi
 
+export_png() {
+	inkscape -C -y 0 -w $1 -h $1 -o "$2" "$3" 2>/dev/null && magick identify "$2"
+}
+
 for f in "$@"; do
 	name="${f%.*}"
-	for i in 16 24 32 36 48 64 72 96 128 144 192 256 384 512; do
+	for i in 512 255 150; do
 		png="$name-${i}.png"
-		inkscape -C -y 0 -w $i -h $i -o "$png" "$f" 2>/dev/null && magick identify "$png"
+		export_png "$i" "$png" "$f" &
 	done
+	pngs=()
+	for i in 192 128 96 72 64 48 32 24 16; do
+		png="$name-${i}.png"
+		export_png "$i" "$png" "$f" &
+		pngs+=("$png")
+	done
+	wait
+	ico="$name.ico"
+	magick convert -background none "${pngs[@]}" "$ico" && magick identify "$ico"
 done
+
+wait
