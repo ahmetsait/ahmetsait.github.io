@@ -15,24 +15,36 @@ if [[ $magick != 0 ]]; then
 fi
 
 export_png() {
-	inkscape -C -y 0 -w $1 -h $1 -o "$2" "$3" 2>/dev/null && magick identify "$2"
+	# https://gitlab.com/inkscape/inkscape/-/issues/4716#note_1898150983
+	if [[ $3 -nt $2 ]]; then
+		SELF_CALL=xxx inkscape -C -y 0 -w $1 -h $1 -o "$2" "$3" 2>/dev/null
+	fi
 }
+
+sizes=(512 256 255 192 180 150 128 96 72 64 48 32 24 20 16)
+readarray -d '' -t sizes < <(for s in "${sizes[@]}"; do printf '%s\0' "$s"; done | sort -r -n -z)
 
 for f in "$@"; do
 	name="${f%.*}"
-	for i in 512 255 150; do
-		png="$name-${i}.png"
-		export_png "$i" "$png" "$f" &
-	done
 	pngs=()
-	for i in 192 128 96 72 64 48 32 24 16; do
+	declare -A size2job
+	declare -A job2png
+	for i in "${sizes[@]}"; do
 		png="$name-${i}.png"
 		export_png "$i" "$png" "$f" &
-		pngs+=("$png")
+		size2job["$i"]=$!
+		job2png[$!]="$png"
 	done
-	wait
+	for i in "${sizes[@]}"; do
+		if (( i < 256 )); then
+			j="${size2job["$i"]}"
+			if wait "$j"; then
+				pngs+=("${job2png["$j"]}")
+			fi
+		fi
+	done
 	ico="$name.ico"
-	magick convert -background none "${pngs[@]}" "$ico" && magick identify "$ico"
+	magick convert -background none "${pngs[@]}" "$ico"
 done
 
 wait
