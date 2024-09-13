@@ -11,12 +11,19 @@
 		
 {% include favicons.html %}
 		
-		<link rel="stylesheet" href="{{ '/blog.css' | relative_url }}">
-		<link rel="stylesheet" id="style-dark" disabled href="{{ '/blog-dark.css' | relative_url }}">
+		<link rel="stylesheet" href="{{ '/css/reset.css' | relative_url }}">
+		<link rel="stylesheet" href="{{ '/css/blog.css' | relative_url }}">
+		<link rel="stylesheet" href="{{ '/css/github-markdown.css' | relative_url }}">
+		<link rel="stylesheet" href="{{ '/css/syntax-monokai-sublime.css' | relative_url }}">
+		<link rel="stylesheet" class="stylesheet-dark" disabled href="{{ '/css/reset-dark.css' | relative_url }}">
+		<link rel="stylesheet" class="stylesheet-dark" disabled href="{{ '/css/blog-dark.css' | relative_url }}">
+		<link rel="stylesheet" class="stylesheet-dark" disabled href="{{ '/css/github-markdown-dark.css' | relative_url }}">
 		
 		<noscript>
-			<link rel="stylesheet" href="{{ '/noscript.css' | relative_url }}">
-			<link rel="stylesheet" href="{{ '/blog-dark.css' | relative_url }}" media="(prefers-color-scheme: dark)">
+			<link rel="stylesheet" href="{{ '/css/noscript.css' | relative_url }}">
+			<link rel="stylesheet" href="{{ '/css/reset-dark.css' | relative_url }}" media="(prefers-color-scheme: dark)">
+			<link rel="stylesheet" href="{{ '/css/blog-dark.css' | relative_url }}" media="(prefers-color-scheme: dark)">
+			<link rel="stylesheet" href="{{ '/css/github-markdown-dark.css' | relative_url }}" media="(prefers-color-scheme: dark)">
 		</noscript>
 		
 		<link rel="alternate" type="application/atom+xml" href="{{ site.data.langs[page.lang].blog.feed | relative_url }}" title="{{ site.title }}">
