@@ -10,10 +10,9 @@ function setTheme(dark) {
 
 function refreshTheme(mq) {
 	const dark = localStorage.getItem("dark-theme");
-	if (dark === null)
-		document.getElementById("style-dark").disabled = !mq.matches;
-	else
-		document.getElementById("style-dark").disabled = !(dark === "1");
+	for (const sheet of document.getElementsByClassName("stylesheet-dark")) {
+		sheet.disabled = dark === null ? !mq.matches : !(dark === "1");
+	}
 }
 
 mediaQuery.addEventListener("change", refreshTheme);
