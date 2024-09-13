@@ -12,12 +12,12 @@ layout:
 	"description": "{{ site.data.langs[page.lang].blog.description }}",
 	"icons": [
 		{
-			"src": "/favicon/favicon-192.png",
+			"src": "/favicon/favicon-192.g.png",
 			"sizes": "192x192",
 			"type": "image/png"
 		},
 		{
-			"src": "/favicon/favicon-512.png",
+			"src": "/favicon/favicon-512.g.png",
 			"sizes": "512x512",
 			"type": "image/png"
 		},

@@ -26,7 +26,7 @@
 <meta property="og:url" content="{{ canonical }}">
 <meta property="og:type" content="{% if post %}article{% else %}website{% endif %}">
 <meta property="og:title" content="{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}">
-<meta property="og:image" content="{{ '/assets/opengraph-' | append: page.lang | append: '.png' | absolute_url }}">
+<meta property="og:image" content="{{ '/assets/opengraph-' | append: page.lang | append: '.g.png' | absolute_url }}">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -66,7 +66,7 @@
 		"image": {
 			"@id": "#icon",
 			"@type": "imageObject",
-			"url": "{{ '/favicon/favicon-150.png' | absolute_url }}",
+			"url": "{{ '/favicon/favicon-150.g.png' | absolute_url }}",
 			"height": "150",
 			"width": "150"
 		},
@@ -90,7 +90,7 @@
 		"description": "{{ description_inline }}",
 		"image": {
 			"@type": "imageObject",
-			"url": "{{ '/favicon/favicon-150.png' | absolute_url }}",
+			"url": "{{ '/favicon/favicon-150.g.png' | absolute_url }}",
 			"height": "150",
 			"width": "150"
 		},
@@ -106,4 +106,4 @@
 <meta name="twitter:url" content="{{ canonical }}">
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}">
 <meta name="twitter:description" content="{{ description_inline }}">
-<meta name="twitter:image" content="{{ '/assets/twitter-' | append: page.lang | append: '.png' | absolute_url }}">
+<meta name="twitter:image" content="{{ '/assets/twitter-' | append: page.lang | append: '.g.png' | absolute_url }}">
