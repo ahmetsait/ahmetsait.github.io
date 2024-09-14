@@ -21,7 +21,11 @@ export_png() {
 	fi
 }
 
+apple_touch_icon_inner_size=155
+apple_touch_icon_size=180
+
 sizes=(512 256 255 192 180 150 128 96 72 64 48 32 24 20 16)
+sizes+=($apple_touch_icon_inner_size)
 readarray -d '' -t sizes < <(for s in "${sizes[@]}"; do printf '%s\0' "$s"; done | sort -r -n -z)
 
 for f in "$@"; do
@@ -36,7 +40,7 @@ for f in "$@"; do
 		job2png[$!]="$png"
 	done
 	for i in "${sizes[@]}"; do
-		if (( i < 256 )); then
+		if (( i < 256 && i != apple_touch_icon_inner_size )); then
 			j="${size2job["$i"]}"
 			if wait "$j"; then
 				pngs+=("${job2png["$j"]}")
@@ -45,6 +49,14 @@ for f in "$@"; do
 	done
 	ico="$name.ico"
 	magick convert -background none "${pngs[@]}" "$ico"
+	
+	j="${size2job[$apple_touch_icon_inner_size]}"
+	if [[ -n $j ]] && wait "$j"; then
+		png="${job2png["$j"]}"
+		touch_icon="$(dirname "$name")/apple-touch-icon.png"
+		magick convert "$png" -define png:exclude-chunks=date,time -background white -gravity center -extent "${apple_touch_icon_size}x${apple_touch_icon_size}" "$touch_icon" &&
+		rm "$png"
+	fi
 done
 
 wait
