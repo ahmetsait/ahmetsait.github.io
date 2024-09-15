@@ -3,6 +3,9 @@ css/
 # Auto-generated files
 *.g.*
 
+# Generated SSL keys
+*.pem
+
 # Binary dependencies
 bin/
 
