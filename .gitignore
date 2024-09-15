@@ -3,6 +3,9 @@ css/
 # Auto-generated files
 *.g.*
 
+# Binary dependencies
+bin/
+
 # ======
 # Jekyll
 # ======
