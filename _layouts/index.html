@@ -7,9 +7,9 @@ layout: blog
 <ul class="post-index">
 	{%- assign posts = site.documents | where: "lang", page.lang -%}
 	{%- for post in posts -%}
-	{%- assign day = post.date | date: "%e" -%}
-	{%- assign month = post.date | date: "%B" -%}
-	{%- assign year = post.date | date: "%Y" -%}
+		{%- assign day = post.date | date: "%e" -%}
+		{%- assign month = post.date | date: "%B" -%}
+		{%- assign year = post.date | date: "%Y" -%}
 		<li>
 			<div class="meta">
 				<time class="date" datetime="{{ post.date | date: '%FT%T%:z' }}" title="{{ site.data.translations['Posted'][page.lang] }}: {{ post.date | date: '%F %T %:z' }}">
