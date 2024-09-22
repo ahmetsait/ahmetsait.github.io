@@ -106,7 +106,7 @@ plugins:
 markdown: kramdown
 highlighter: rouge
 lsi: false
-page_excerpts: true
+page_excerpts: false
 excerpt_separator: "\n\n"
 incremental: false
 
