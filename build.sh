@@ -56,6 +56,17 @@ if [[ watch -ne 0 ]]; then
 fi
 echo "Done"
 
+if [[ -d node_modules/.bin ]]; then
+	export PATH="$(realpath node_modules/.bin):$PATH"
+fi
+
+echo "Compiling TypeScript..."
+tsc
+if [[ watch -ne 0 ]]; then
+	tsc --watch &
+fi
+echo "Done"
+
 if [[ no_jekyll -eq 0 ]]; then
 	bundler exec jekyll build "$@"
 fi
