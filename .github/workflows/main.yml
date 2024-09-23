@@ -42,39 +42,15 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Fetch ImageMagick ETag
-        id: fetch-magick-etag
+      - name: Install dependencies
         run: |
-          echo "etag=$(./fetch-magick-etag.sh)" >> "$GITHUB_OUTPUT"
-
-      - name: Restore ImageMagick
-        id: restore-magick
-        uses: actions/cache@v4
-        with:
-          path: |
-            bin/magick
-            bin/magick-etag
-          key: magick-${{ steps.fetch-magick-etag.outputs.etag }}
-
-      - name: Fetch Inkscape version
-        id: fetch-inkscape-version
-        run: |
-          echo "version=$(./fetch-inkscape-version.sh)" >> "$GITHUB_OUTPUT"
-
-      - name: Restore Inkscape
-        id: restore-inkscape
-        uses: actions/cache@v4
-        with:
-          path: |
-            bin/inkscape
-            bin/inkscape-version
-          key: inkscape-${{ steps.fetch-inkscape-version.outputs.version }}
+          sudo apt install -y inkscape imagemagick
 
       - name: Build
         env:
           JEKYLL_ENV: production
         run: |
-          ./build.sh --fetch-deps --baseurl "${{ steps.pages.outputs.base_path }}"
+          ./build.sh --baseurl "${{ steps.pages.outputs.base_path }}"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
