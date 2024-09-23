@@ -76,10 +76,10 @@ if [[ inkscape -ne 0 ]]; then
 	exit 1
 fi
 
-command -v magick > /dev/null; magick=$?
+command -v convert > /dev/null; magick=$?
 
 if [[ magick -ne 0 ]]; then
-	echo $'Cannot find \'magick\' command. Make sure ImageMagick is installed and reachable from the current working directory. See: https://www.imagemagick.org' >&2
+	echo $'Cannot find \'convert\' command. Make sure ImageMagick is installed and reachable from the current working directory. See: https://www.imagemagick.org' >&2
 	exit 1
 fi
 
@@ -133,7 +133,7 @@ for f in "$@"; do
 	
 	if (( ${#pngs[@]} > 0 )); then
 		ico="$name.g.ico"
-		magick -background none "${pngs[@]}" "$ico"
+		convert -background none "${pngs[@]}" "$ico"
 	fi
 	
 	if (( apple != 0 )); then

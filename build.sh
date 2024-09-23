@@ -1,15 +1,10 @@
 #!/usr/bin/env bash
 
-fetch_deps=0
 watch=0
 no_jekyll=0
 
 while [[ $# -gt 0 ]]; do
 	case "$1" in
-		-F|--fetch-deps)
-			fetch_deps=1
-			shift
-			;;
 		-w|--watch)
 			watch=1
 			shift
@@ -25,20 +20,6 @@ while [[ $# -gt 0 ]]; do
 done
 
 set -e
-
-if [[ fetch_deps -ne 0 ]]; then
-	(
-		set -e
-		mkdir -p bin
-		cd bin
-		../fetch-inkscape.sh
-		../fetch-magick.sh
-	)
-fi
-
-if [[ -d bin ]]; then
-	export PATH="$(realpath bin):$PATH"
-fi
 
 echo "Generating images..."
 ./gen-icon.sh assets/opengraph-*.svg assets/twitter-*.svg &
