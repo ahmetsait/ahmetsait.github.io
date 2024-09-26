@@ -42,9 +42,30 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Install dependencies
+      - name: Get resvg sha
+        id: get-resvg-sha
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          sudo apt install -y inkscape imagemagick
+          echo "data=$(gh api "repos/RazrFalcon/resvg/git/ref/tags/$(gh api repos/RazrFalcon/resvg/releases/latest --jq '.tag_name')" --jq '.object.sha')" >> "$GITHUB_OUTPUT"
+
+      - name: Restore resvg
+        id: restore-resvg
+        uses: actions/cache@v4
+        with:
+          path: |
+            bin/resvg
+          key: resvg-${{ steps.get-resvg-sha.outputs.data }}
+
+      - if: ${{ steps.restore-resvg.outputs.cache-hit != 'true' }}
+        name: Get resvg
+        id: get-resvg
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          asset="resvg-linux-x86_64.tar.gz" &&
+          gh release --repo RazrFalcon/resvg download --pattern "$asset" --dir bin &&
+          tar -C bin -xzf "bin/$asset"
 
       - name: Build
         env:

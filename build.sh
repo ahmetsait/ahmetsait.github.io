@@ -21,6 +21,10 @@ done
 
 set -e
 
+if [[ -d bin ]]; then
+	export PATH="$(realpath bin):$PATH"
+fi
+
 echo "Generating images..."
 ./gen-icon.sh assets/opengraph-*.svg assets/twitter-*.svg &
 asset_job=$!
