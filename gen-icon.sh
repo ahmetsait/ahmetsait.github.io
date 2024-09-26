@@ -69,26 +69,29 @@ fi
 
 set -- "${args[@]}"
 
-command -v inkscape > /dev/null; inkscape=$?
+command -v resvg > /dev/null; resvg=$?
 
-if [[ inkscape -ne 0 ]]; then
-	echo $'Cannot find \'inkscape\' command. Make sure Inkscape is installed and reachable from the current working directory. See: https://inkscape.org' >&2
+if [[ resvg -ne 0 ]]; then
+	echo "Cannot find 'resvg' command. Make sure resvg is installed and resvg reachable from the current working directory. See: https://github.com/RazrFalcon/resvg" >&2
 	exit 1
 fi
 
 command -v convert > /dev/null; magick=$?
 
 if [[ magick -ne 0 ]]; then
-	echo $'Cannot find \'convert\' command. Make sure ImageMagick is installed and reachable from the current working directory. See: https://www.imagemagick.org' >&2
+	echo "Cannot find 'convert' command. Make sure ImageMagick is installed and reachable from the current working directory. See: https://www.imagemagick.org" >&2
 	exit 1
 fi
 
 status=0
 
 export_png() {
-	# https://gitlab.com/inkscape/inkscape/-/issues/4716#note_1898150983
-	if [[ $3 -nt $2 ]]; then
-		SELF_CALL=xxx inkscape -C -w "$1" -h "$1" -o "$2" "$3"
+	if [[ $2 -nt $3 ]]; then
+		if (( $1 == 0 )); then
+			resvg "$2" "$3"
+		else
+			resvg -w "$1" -h "$1" "$2" "$3"
+		fi
 	fi
 }
 
@@ -109,13 +112,13 @@ for f in "$@"; do
 		else
 			png="$name-$i.g.png"
 		fi
-		export_png "$i" "$png" "$f" &
+		export_png "$i" "$f" "$png" &
 		size2job["$i"]=$!
 		job2png[$!]="$png"
 	done
 	if (( apple != 0 )); then
 		apple_icon="$(dirname "$name")/apple-touch-icon.g.png"
-		export_png "$apple_touch_icon_content_size" "$apple_icon" "$f" &
+		export_png "$apple_touch_icon_content_size" "$f" "$apple_icon" &
 		apple_job=$!
 	fi
 	
