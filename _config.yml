@@ -83,6 +83,11 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - tsconfig.json
+  - tsconfig.tsbuildinfo
+  - package-lock.json
+  - package.json
+  - "*.sh"
 keep_files:
   - .git
   - .svn
