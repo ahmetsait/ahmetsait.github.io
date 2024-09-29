@@ -99,3 +99,15 @@
 	transition:
 		border-top-color 0.2s ease-in-out;
 }
+
+@keyframes fragment-highlight {
+	0% {
+		box-shadow: 0 .25em 0 0 #000000;
+	}
+	50% {
+		box-shadow: 0 .25em 0 0 #004073;
+	}
+	100% {
+		box-shadow: 0 .25em 0 0 #000000;
+	}
+}
