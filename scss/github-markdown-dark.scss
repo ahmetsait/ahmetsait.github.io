@@ -1,9 +1,13 @@
 .markdown-body a {
 	color: #4b7ff1;
+	transition:
+		color 0.2s ease-in-out;
 }
 
 .markdown-body hr {
 	border-bottom: 1px solid #061e2f;
+	transition:
+		border-bottom-color 0.2s ease-in-out;
 }
 
 .markdown-body kbd {
@@ -11,46 +15,66 @@
 	background-color: #00091e;
 	border: 1px solid #132738;
 	box-shadow: inset 0 -1px 0 #132738;
+	transition:
+		color 0.2s ease-in-out,
+		background-color 0.2s ease-in-out,
+		border-color 0.2s ease-in-out,
+		box-shadow 0.2s ease-in-out;
 }
 
 .markdown-body :checked+.radio-label {
 	border-color: #4b7ff1;
-}
-
-.markdown-body :checked+.radio-label {
 	border-bottom-color: #001525;
+	transition:
+		border-color 0.2s ease-in-out;
 }
 
 .markdown-body hr {
 	background-color: #031c2e;
+	transition:
+		background-color 0.2s ease-in-out;
 }
 
 .markdown-body blockquote {
 	color: #757d86;
 	border-left: .25em solid #061e2f;
+	transition:
+		color 0.2s ease-in-out,
+		border-left-color 0.2s ease-in-out;
 }
 
 .markdown-body h1,
 .markdown-body h2 {
 	border-bottom: 1px solid #001728;
+	transition:
+		border-bottom-color 0.2s ease-in-out;
 }
 
 .markdown-body h6 {
 	color: #757d86;
+	transition:
+		color 0.2s ease-in-out;
 }
 
 .markdown-body table td,
 .markdown-body table th {
 	border: 1px solid #061e2f;
+	transition:
+		border-color 0.2s ease-in-out;
 }
 
 .markdown-body table tr {
 	background-color: #00031b;
 	border-top: 1px solid #1c2f40;
+	transition:
+		background-color 0.2s ease-in-out,
+		border-top-color 0.2s ease-in-out;
 }
 
 .markdown-body table tr:nth-child(2n) {
 	background-color: #000d21;
+	transition:
+		background-color 0.2s ease-in-out;
 }
 
 .markdown-body h1 .anchor,
@@ -61,6 +85,9 @@
 .markdown-body h6 .anchor {
 	color: #005ab0;
 	fill: #005ab0;
+	transition:
+		color 0.2s ease-in-out,
+		fill 0.2s ease-in-out;
 	@media screen and (hover: none) {
 		color: #005ab080;
 		fill: #005ab080;
@@ -69,4 +96,6 @@
 
 .markdown-body .footnotes {
 	border-top: 1px solid #1a2835;
+	transition:
+		border-top-color 0.2s ease-in-out;
 }

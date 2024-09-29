@@ -8,15 +8,22 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	transition:
+		color 0.2s ease-in-out,
+		background-color 0.2s ease-in-out;
 }
 
 a {
 	color: #0366d6;
 	text-decoration: none;
+	transition:
+		color 0.2s ease-in-out;
 }
 
 a:visited {
 	color: #0366d6;
+	transition:
+		color 0.2s ease-in-out;
 }
 
 a:hover {
@@ -81,6 +88,8 @@ img {
 .site-header {
 	border-top: 5px solid #424242;
 	border-bottom: 1px solid #e8e8e8;
+	transition:
+		border-color 0.2s ease-in-out;
 }
 
 .header-flex {
@@ -104,6 +113,8 @@ img {
 	font-weight: 300;
 	margin-bottom: 5px;
 	color: gray;
+	transition:
+		color 0.2s ease-in-out;
 }
 
 .site-nav {
@@ -148,6 +159,8 @@ img {
 	border: solid silver 1px;
 	border-radius: 25%;
 	vertical-align: top;
+	transition:
+		border-color 0.2s ease-in-out;
 }
 
 // Dropdown
@@ -163,6 +176,8 @@ img {
 	padding: 9px;
 	border: solid silver 1px;
 	border-radius: 25%;
+	transition:
+		border-color 0.2s ease-in-out;
 }
 
 .dropdown-button:hover {
@@ -178,6 +193,9 @@ img {
 	background-color: white;
 	border-radius: 5px;
 	text-align: center;
+	transition:
+		box-shadow 0.2s ease-in-out,
+		background-color 0.2s ease-in-out;
 }
 
 .dropdown-menu-item {
@@ -197,6 +215,9 @@ button.dropdown-menu-item {
 	justify-content: center;
 	color: #595959;
 	fill: #595959;
+	transition:
+		color 0.2s ease-in-out,
+		fill 0.2s ease-in-out;
 }
 
 button.dropdown-menu-item:hover {
@@ -238,6 +259,9 @@ button.dropdown-menu-item:hover {
 	color: #828282;
 	fill: #828282;
 	margin-top: .25em;
+	transition:
+		color 0.2s ease-in-out,
+		fill 0.2s ease-in-out;
 }
 
 .post-index .meta .date {
@@ -269,6 +293,10 @@ button.dropdown-menu-item:hover {
 	fill: #828282;
 	border-bottom: 1px solid #eaecef;
 	padding-bottom: 6px;
+	transition:
+		color 0.2s ease-in-out,
+		fill 0.2s ease-in-out,
+		border-bottom-color 0.2s ease-in-out;
 }
 
 .post-meta .date {
@@ -325,6 +353,9 @@ button.dropdown-menu-item:hover {
 	border-width: 1px 0px;
 	background-color: #eee;
 	padding: 15px 0;
+	transition:
+		border-color 0.2s ease-in-out,
+		background-color 0.2s ease-in-out;
 }
 
 .footer-content {
@@ -335,6 +366,8 @@ button.dropdown-menu-item:hover {
 	margin: 4px;
 	background-color: white;
 	border-radius: 25%;
+	transition:
+		background-color 0.2s ease-in-out;
 }
 
 .footer-content .roundbox svg {

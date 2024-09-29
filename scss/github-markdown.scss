@@ -66,6 +66,8 @@
 .markdown-body a {
 	color: #0366d6;
 	text-decoration: none;
+	transition:
+		color 0.2s ease-in-out;
 }
 
 .markdown-body a:hover {
@@ -87,6 +89,8 @@
 	background: transparent;
 	border: 0;
 	border-bottom: 1px solid #dfe2e5;
+	transition:
+		border-bottom-color 0.2s ease-in-out;
 }
 
 .markdown-body hr:after,
@@ -124,6 +128,11 @@
 	border: 1px solid #d1d5da;
 	border-radius: 3px;
 	box-shadow: inset 0 -1px 0 #d1d5da;
+	transition:
+		color 0.2s ease-in-out,
+		background-color 0.2s ease-in-out,
+		border-color 0.2s ease-in-out,
+		box-shadow 0.2s ease-in-out;
 }
 
 .markdown-body h1,
@@ -249,10 +258,14 @@
 	position: relative;
 	z-index: 1;
 	border-color: #0366d6;
+	transition:
+		border-color 0.2s ease-in-out;
 }
 
 .markdown-body hr {
 	border-bottom-color: #eee;
+	transition:
+		border-bottom-color 0.2s ease-in-out;
 }
 
 .markdown-body:after,
@@ -296,12 +309,17 @@
 	margin: 24px 0;
 	background-color: #e1e4e8;
 	border: 0;
+	transition:
+		background-color 0.2s ease-in-out;
 }
 
 .markdown-body blockquote {
 	padding: 0 1em;
 	color: #6a737d;
 	border-left: .25em solid #dfe2e5;
+	transition:
+		color 0.2s ease-in-out,
+		border-left-color 0.2s ease-in-out;
 }
 
 .markdown-body blockquote > :first-child {
@@ -332,6 +350,8 @@
 .markdown-body h2 {
 	padding-bottom: .3em;
 	border-bottom: 1px solid #eaecef;
+	transition:
+		border-bottom-color 0.2s ease-in-out;
 }
 
 .markdown-body h1:target,
@@ -363,6 +383,8 @@
 .markdown-body h6 {
 	font-size: .85em;
 	color: #6a737d;
+	transition:
+		color 0.2s ease-in-out;
 }
 
 .markdown-body ol,
@@ -421,15 +443,22 @@
 .markdown-body table th {
 	padding: 6px 13px;
 	border: 1px solid #dfe2e5;
+	transition:
+		border-color 0.2s ease-in-out;
 }
 
 .markdown-body table tr {
 	background-color: #fff;
 	border-top: 1px solid #c6cbd1;
+	transition:
+		background-color 0.2s ease-in-out,
+		border-top-color 0.2s ease-in-out;
 }
 
 .markdown-body table tr:nth-child(2n) {
 	background-color: #f6f8fa;
+	transition:
+		background-color 0.2s ease-in-out;
 }
 
 .markdown-body img {
@@ -547,6 +576,9 @@
 	color: cornflowerblue;
 	fill: cornflowerblue;
 	visibility: hidden;
+	transition:
+		color 0.2s ease-in-out,
+		fill 0.2s ease-in-out;
 	@media screen and (hover: none) {
 		color: #6495ed80;
 		fill: #6495ed80;
@@ -599,6 +631,8 @@
 .markdown-body .footnotes {
 	font-size: 80%;
 	border-top: 1px solid lightgray;
+	transition:
+		border-top-color 0.2s ease-in-out;
 }
 
 @keyframes fragment-highlight {
