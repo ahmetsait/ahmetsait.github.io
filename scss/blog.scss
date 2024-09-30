@@ -123,12 +123,12 @@ img {
 	vertical-align: middle;
 }
 
-.site-nav li {
+.site-nav a {
 	display: inline-block;
 	text-decoration: inherit;
 }
 
-.site-nav li:not(:first-child) {
+.site-nav a:not(:first-child) {
 	margin-left: 20px;
 }
 
