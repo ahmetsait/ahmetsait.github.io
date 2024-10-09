@@ -13,6 +13,9 @@ Options:
         values. Original size from the SVG file is used when this option is
         missing or 0 is used.
 
+    -b, --background=<COLOR>
+        Background color to use while rendering SVG.
+
     -a, --apple=[SIZE,PADDING]
         Apple touch icon size to generate. "180,25" is used when no size or
         padding argument is given. Padding is automatically calculated as 1/7
@@ -29,13 +32,13 @@ if [[ $? -ne 4 ]]; then
 	exit 1
 fi
 
-opts=$(getopt -o 'hs:a::' -l 'help,sizes:,apple::' -n "$app_name" -- "$@") || exit $?
+args=()
+opts=$(getopt -o 'hs:b:a::' -l 'help,sizes:,background:,apple::' -n "$app_name" -- "$@") || exit $?
 
 eval "opts=($opts)"
 
-args=()
-apple=0
 sizes=0
+apple=0
 
 for ((i = 0; i < ${#opts[@]}; i++)); do
 	opt="${opts["$i"]}"
@@ -44,6 +47,10 @@ for ((i = 0; i < ${#opts[@]}; i++)); do
 			((i++))
 			readarray -t -d, png_sizes < <(printf "%s" "${opts["$i"]}")
 			sizes=1
+			;;
+		-b|--background)
+			((i++))
+			background="${opts["$i"]}"
 			;;
 		-a|--apple)
 			((i++))
@@ -55,7 +62,7 @@ for ((i = 0; i < ${#opts[@]}; i++)); do
 			exit 0
 			;;
 		--)
-			args+=("${opts[@]:((i+1))}")
+			args+=("${opts[@]:i+1}")
 			break
 			;;
 	esac
@@ -86,11 +93,11 @@ fi
 status=0
 
 export_png() {
-	if [[ $2 -nt $3 ]]; then
+	if [[ $2 -nt $3 || ${BASH_SOURCE[0]} -nt $3 ]]; then
 		if (( $1 == 0 )); then
-			resvg "$2" "$3"
+			resvg ${background:+--background "$background"} "$2" "$3"
 		else
-			resvg -w "$1" -h "$1" "$2" "$3"
+			resvg ${background:+--background "$background"} -w "$1" -h "$1" "$2" "$3"
 		fi
 	fi
 }
