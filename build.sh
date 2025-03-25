@@ -48,7 +48,7 @@ fi
 echo "Compiling TypeScript..."
 tsc
 if [[ watch -ne 0 ]]; then
-	tsc --watch &
+	tsc --watch --preserveWatchOutput &
 fi
 echo "Done"
 
