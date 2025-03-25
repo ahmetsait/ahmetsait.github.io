@@ -83,10 +83,10 @@ if [[ resvg -ne 0 ]]; then
 	exit 1
 fi
 
-command -v convert > /dev/null; magick=$?
+command -v magick > /dev/null; magick=$?
 
 if [[ magick -ne 0 ]]; then
-	echo "Cannot find 'convert' command. Make sure ImageMagick is installed and reachable from the current working directory. See: https://www.imagemagick.org" >&2
+	echo "Cannot find 'magick' command. Make sure ImageMagick is installed and reachable from the current working directory. See: https://www.imagemagick.org" >&2
 	exit 1
 fi
 
@@ -143,12 +143,12 @@ for f in "$@"; do
 	
 	if (( ${#pngs[@]} > 0 )); then
 		ico="$name.g.ico"
-		convert -background none "${pngs[@]}" "$ico"
+		magick -background none "${pngs[@]}" "$ico"
 	fi
 	
 	if (( apple != 0 )); then
 		if wait -n "$apple_job"; then
-			convert "$apple_icon" -define png:exclude-chunks=date,time -background white -gravity center -extent "${apple_touch_icon_size}x${apple_touch_icon_size}" "$apple_icon"
+			magick "$apple_icon" -define png:exclude-chunks=date,time -background white -gravity center -extent "${apple_touch_icon_size}x${apple_touch_icon_size}" "$apple_icon"
 		else
 			status=1
 		fi
