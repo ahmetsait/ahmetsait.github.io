@@ -2,7 +2,7 @@
 
 [![Veni Vidi Codi](assets/github.svg)](https://ahmetsait.github.io)  
 ============================
-[![Articles](https://img.shields.io/badge/Articles-CC--BY--4.0-green)](LICENSE) [![Codes](https://img.shields.io/badge/Codes-Unlicense-green)](LICENSE)
+[![Articles](https://img.shields.io/badge/Articles-CC--BY--4.0-green)](LICENSE) [![Codes](https://img.shields.io/badge/Codes-Unlicense-green)](LICENSE) [![Sponsor](https://img.shields.io/badge/Sponsor-black?logo=githubsponsors)](https://github.com/sponsors/ahmetsait)
 </div>
 
 Hello there!
